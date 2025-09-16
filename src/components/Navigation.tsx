@@ -5,28 +5,28 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [{
     name: "Inicio",
-    href: "#inicio"
+    href: "/"
   }, {
     name: "Dr. Julián Palacios",
-    href: "#about"
+    href: "/doctor"
   }, {
     name: "Diseño de Sonrisa",
-    href: "#diseno-sonrisa"
+    href: "/diseno-sonrisa"
   }, {
     name: "Carillas Dentales",
-    href: "#carillas"
+    href: "/carillas"
   }, {
     name: "Periodoncia",
-    href: "#periodoncia"
+    href: "/periodoncia"
   }, {
     name: "Implantología",
-    href: "#implantologia"
+    href: "/implantologia"
   }, {
     name: "Casos Clínicos",
-    href: "#casos"
+    href: "/casos-clinicos"
   }, {
     name: "Contacto",
-    href: "#contacto"
+    href: "/contacto"
   }];
   return <nav className="bg-transparent backdrop-blur-sm border-b border-white/10 fixed top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
