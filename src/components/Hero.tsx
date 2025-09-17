@@ -6,6 +6,7 @@ import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
 import julianPalaciosGeneratedLogo from "@/assets/julian-palacios-generated-logo.png";
 import drPalaciosHeaderLogo from "@/assets/dr-palacios-header-logo.png";
 import drPalaciosFooterLogo from "@/assets/dr-palacios-footer-logo.png";
+import DoctorTitle from "./DoctorTitle";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -16,13 +17,9 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        {/* Main Logo/Name */}
-        <div className="mb-8 flex justify-center">
-          <img 
-            src={julianPalaciosGeneratedLogo} 
-            alt="Dr. Julián Mauricio Palacios Gaviria - Odontólogo" 
-            className="h-40 md:h-48 lg:h-56 w-auto object-contain"
-          />
+        {/* Doctor Title */}
+        <div className="mb-12">
+          <DoctorTitle />
         </div>
 
         {/* Specialties */}
