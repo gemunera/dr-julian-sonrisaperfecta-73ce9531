@@ -48,21 +48,33 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, category }: BeforeA
               draggable={false}
             />
             
-            {/* Before Image with clip-path */}
-            <img 
-              src={beforeImage} 
-              alt={`Antes - ${title}`}
-              className="absolute inset-0 w-full h-full object-cover"
+            {/* Before Image with smooth transition */}
+            <div 
+              className="absolute inset-0 w-full h-full overflow-hidden"
               style={{
-                clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
+                width: `${sliderPosition}%`,
+                transition: isDragging ? 'none' : 'width 0.1s ease-out'
               }}
-              draggable={false}
-            />
+            >
+              <img 
+                src={beforeImage} 
+                alt={`Antes - ${title}`}
+                className="w-full h-full object-cover"
+                style={{
+                  width: `${100 * (100 / sliderPosition)}%`,
+                  maxWidth: 'none'
+                }}
+                draggable={false}
+              />
+            </div>
             
             {/* Slider Line */}
             <div 
-              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-10 cursor-col-resize"
-              style={{ left: `${sliderPosition}%` }}
+              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-20 cursor-col-resize"
+              style={{ 
+                left: `${sliderPosition}%`,
+                transform: 'translateX(-50%)'
+              }}
             >
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
