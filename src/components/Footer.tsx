@@ -1,5 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle, Mail, MapPin, Instagram, Facebook, Linkedin, Heart } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Instagram, Facebook, Linkedin, Heart } from "lucide-react";
+
+const WhatsAppIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.56-.01-.188 0-.669.25-.916.371C6.27 7.55 5.8 8.54 5.8 10.42c0 1.881 1.108 3.7 1.263 3.956.154.256 2.463 3.76 5.969 5.276.835.36 1.487.576 1.996.737.837.267 1.598.229 2.2.139.671-.1 2.062-.843 2.353-1.656.292-.813.292-1.51.206-1.656-.087-.146-.322-.232-.678-.405z"/>
+  </svg>
+);
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,8 +72,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <Phone size={18} />
-                <span className="text-primary-foreground/80">+57 123 456 7890</span>
+                <WhatsAppIcon />
+                <span className="text-primary-foreground/80">316 7580565</span>
               </div>
               <div className="flex items-center gap-3">
                 
