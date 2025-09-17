@@ -2,12 +2,22 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
 import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
 import drPalaciosLogoName from "@/assets/dr-palacios-logo-name.png";
+import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      {/* Side Logo */}
+      <div className="absolute right-4 md:right-8 lg:right-12 top-1/2 transform -translate-y-1/2 z-10">
+        <img 
+          src={drPalaciosLogoSide} 
+          alt="Dr. Julián Mauricio Palacios Gaviria" 
+          className="h-24 md:h-32 lg:h-40 w-auto object-contain opacity-90"
+        />
       </div>
 
       {/* Content */}
