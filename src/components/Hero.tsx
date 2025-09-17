@@ -19,10 +19,9 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Logo/Name */}
         <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight">
-            <span className="block">Dr</span>
-            <span className="block text-6xl md:text-8xl lg:text-9xl">Julián</span>
-            <span className="block">Palacios</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
+            <span className="block text-5xl md:text-7xl lg:text-8xl">Julian Mauricio</span>
+            <span className="block text-5xl md:text-7xl lg:text-8xl">Palacios Gaviria</span>
           </h1>
         </div>
 
