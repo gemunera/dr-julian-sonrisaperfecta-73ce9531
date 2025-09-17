@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
           <div className="flex items-center justify-center gap-2 text-white/90">
             <Mail size={18} />
-            <span className="text-lg">consultas@drjulianpalacios.com</span>
+            <span className="text-lg">julianpalaciosgaviria05@gmail.com</span>
           </div>
           <div className="flex items-center justify-center gap-2 text-white/90 mt-4">
             <MapPin size={18} />
