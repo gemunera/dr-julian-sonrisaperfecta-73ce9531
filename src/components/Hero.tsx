@@ -5,6 +5,7 @@ import drPalaciosLogoName from "@/assets/dr-palacios-logo-name.png";
 import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
 import julianPalaciosGeneratedLogo from "@/assets/julian-palacios-generated-logo.png";
 import drPalaciosHeaderLogo from "@/assets/dr-palacios-header-logo.png";
+import drPalaciosFooterLogo from "@/assets/dr-palacios-footer-logo.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -84,6 +85,15 @@ const Hero = () => {
             <MessageCircle size={20} />
           </Button>
         </div>
+      </div>
+
+      {/* Footer Logo */}
+      <div className="relative z-10 flex justify-center mt-8">
+        <img 
+          src={drPalaciosFooterLogo} 
+          alt="Dr. Julián Mauricio Palacios Gaviria - Logo" 
+          className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90"
+        />
       </div>
 
       {/* Scroll Indicator */}
