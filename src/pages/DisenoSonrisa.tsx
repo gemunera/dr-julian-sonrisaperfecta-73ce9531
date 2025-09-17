@@ -1,10 +1,15 @@
 import Navigation from "@/components/Navigation";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Smile, Star, Sparkles, Clock, CheckCircle, Heart } from "lucide-react";
+import { Smile, Star, Sparkles, Clock, CheckCircle, Heart, Award } from "lucide-react";
+
+import beforeAfterSmileDesign from "@/assets/before-after-smile-design.jpg";
+import beforeAfterVeneers from "@/assets/before-after-veneers.jpg";
+import beforeAfterImplants from "@/assets/before-after-implants.jpg";
 
 const DisenoSonrisa = () => {
   const benefits = [
@@ -21,6 +26,27 @@ const DisenoSonrisa = () => {
     { step: 2, title: "Diseño Digital", description: "Simulación 3D de tu nueva sonrisa" },
     { step: 3, title: "Preparación", description: "Preparación mínima de dientes" },
     { step: 4, title: "Resultado Final", description: "Colocación y ajuste perfecto" }
+  ];
+
+  const clinicalCases = [
+    {
+      beforeImage: beforeAfterSmileDesign,
+      afterImage: beforeAfterSmileDesign,
+      title: "Diseño de Sonrisa Completo",
+      category: "Diseño de Sonrisa"
+    },
+    {
+      beforeImage: beforeAfterVeneers,
+      afterImage: beforeAfterVeneers,
+      title: "Carillas de Porcelana",
+      category: "Carillas Dentales"
+    },
+    {
+      beforeImage: beforeAfterImplants,
+      afterImage: beforeAfterImplants,
+      title: "Rehabilitación con Implantes",
+      category: "Implantología"
+    }
   ];
 
   return (
@@ -65,9 +91,14 @@ const DisenoSonrisa = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
                 ¿Por qué elegir nuestro Diseño de Sonrisa?
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Cada sonrisa es única, por eso nuestro enfoque está personalizado para ti
-              </p>
+              <div className="text-lg text-muted-foreground max-w-4xl mx-auto space-y-4">
+                <p>
+                  El Diseño de Sonrisa del Dr. Julián Palacios combina estética y ciencia para crear resultados personalizados, naturales y duraderos. Nuestro enfoque se basa en resaltar la armonía facial y dental de cada paciente, garantizando sonrisas únicas que reflejan seguridad y confianza.
+                </p>
+                <p>
+                  Cada diseño es diferente porque cada persona lo es. Con tecnología avanzada y una visión estética detallada, logramos resultados que transforman no solo la sonrisa, sino también la autoestima y la calidad de vida.
+                </p>
+              </div>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -109,6 +140,43 @@ const DisenoSonrisa = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Clinical Cases Section */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
+                <Award className="w-4 h-4 mr-2" />
+                Casos Clínicos Reales
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                Transformaciones Reales
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Descubre los resultados increíbles que hemos logrado con nuestros pacientes
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {clinicalCases.map((caseItem, index) => (
+                <BeforeAfterSlider
+                  key={index}
+                  beforeImage={caseItem.beforeImage}
+                  afterImage={caseItem.afterImage}
+                  title={caseItem.title}
+                  category={caseItem.category}
+                />
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Button size="lg" className="gap-2">
+                <Award className="w-5 h-5" />
+                Ver Más Casos Clínicos
+              </Button>
             </div>
           </div>
         </section>
