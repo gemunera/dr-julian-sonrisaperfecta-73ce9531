@@ -81,13 +81,25 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} />
-                <span className="text-primary-foreground/80">consultas@drpalacios.com</span>
+                <a 
+                  href="mailto:julianpalaciosgaviria05@gmail.com"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors cursor-pointer"
+                >
+                  julianpalaciosgaviria05@gmail.com
+                </a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
                 <div className="text-primary-foreground/80">
-                  <div>Calle 123 # 45-67</div>
-                  <div>Cali, Valle del Cauca</div>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Calle+9+%2346-69+Cali+Valle+del+Cauca"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-foreground transition-colors cursor-pointer"
+                  >
+                    <div>Calle 9 #46-69</div>
+                    <div>Cali, Valle del Cauca</div>
+                  </a>
                 </div>
               </div>
             </div>

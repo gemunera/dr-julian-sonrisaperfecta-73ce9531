@@ -33,7 +33,7 @@ const Contact = () => {
             variant="outline"
             size="lg"
             className="flex items-center gap-3 hover:bg-gray-50 hover:border-gray-500 hover:text-gray-600"
-            onClick={() => window.location.href = 'mailto:contacto@drpalacios.com'}
+            onClick={() => window.location.href = 'mailto:julianpalaciosgaviria05@gmail.com'}
           >
             <Mail className="w-5 h-5" />
             Email
