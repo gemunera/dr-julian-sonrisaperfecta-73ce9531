@@ -33,7 +33,7 @@ const Hero = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="mb-6 space-y-1">
+        <div className="mb-3 space-y-1">
           <div className="flex items-center justify-center gap-2 text-white/90">
             <Phone size={18} />
             <span className="text-lg">+57 123 456 7890</span>
