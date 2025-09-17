@@ -69,10 +69,7 @@ const DisenoSonrisa = () => {
                   <Heart className="w-5 h-5" />
                   Agenda tu Consulta
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2">
-                  <Smile className="w-5 h-5" />
-                  Ver Casos Clínicos
-                </Button>
+                
               </div>
             </div>
           </div>
@@ -96,40 +93,13 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                  
-                </Card>)}
+              {benefits.map((benefit, index) => {})}
             </div>
           </div>
         </section>
 
         {/* Process Section */}
-        <section className="py-16 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Nuestro Proceso
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Un enfoque paso a paso para garantizar resultados excepcionales
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {process.map((item, index) => <Card key={index} className="text-center p-6">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                      {item.step}
-                    </div>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </CardContent>
-                </Card>)}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Clinical Cases Section */}
         <section className="py-16">
