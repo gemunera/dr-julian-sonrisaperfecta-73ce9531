@@ -64,8 +64,8 @@ const Footer = () => {
                 <span className="text-primary-foreground/80">+57 123 456 7890</span>
               </div>
               <div className="flex items-center gap-3">
-                <MessageCircle size={18} />
-                <span className="text-primary-foreground/80">WhatsApp</span>
+                
+                
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} />
