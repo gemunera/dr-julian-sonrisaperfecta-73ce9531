@@ -14,10 +14,10 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* Header Logo */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10">
+      {/* Logo Above Content */}
+      <div className="relative z-10 flex justify-center mb-8">
         <img 
-          src={drPalaciosHeaderLogo} 
+          src={drPalaciosFooterLogo} 
           alt="Dr. Julián Mauricio Palacios Gaviria - Logo" 
           className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90"
         />
@@ -85,15 +85,6 @@ const Hero = () => {
             <MessageCircle size={20} />
           </Button>
         </div>
-      </div>
-
-      {/* Footer Logo */}
-      <div className="relative z-10 flex justify-center mt-8">
-        <img 
-          src={drPalaciosFooterLogo} 
-          alt="Dr. Julián Mauricio Palacios Gaviria - Logo" 
-          className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90"
-        />
       </div>
 
       {/* Scroll Indicator */}
