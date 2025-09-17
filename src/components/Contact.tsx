@@ -1,22 +1,56 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Phone, MessageCircle, Mail, MapPin, Clock, Instagram, Facebook, Linkedin, Calendar, Send } from "lucide-react";
+import { Mail, Instagram, Facebook } from "lucide-react";
+
 const Contact = () => {
-  return <section id="contacto" className="py-20 bg-gradient-light">
+  return (
+    <section id="contacto" className="py-20 bg-gradient-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+        <div className="text-center mb-16">
+          <Badge variant="outline" className="mb-4">Contacto</Badge>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            Conecta con Nosotros
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Síguenos en nuestras redes sociales y mantente al día con nuestros tratamientos
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Info */}
+        {/* Social Media Buttons */}
+        <div className="flex justify-center gap-6">
+          <Button
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-3 hover:bg-blue-50 hover:border-blue-500 hover:text-blue-600"
+            onClick={() => window.open('https://facebook.com', '_blank')}
+          >
+            <Facebook className="w-5 h-5" />
+            Facebook
+          </Button>
           
-
-          {/* Contact Form */}
+          <Button
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-3 hover:bg-gray-50 hover:border-gray-500 hover:text-gray-600"
+            onClick={() => window.location.href = 'mailto:contacto@drpalacios.com'}
+          >
+            <Mail className="w-5 h-5" />
+            Email
+          </Button>
           
+          <Button
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-3 hover:bg-pink-50 hover:border-pink-500 hover:text-pink-600"
+            onClick={() => window.open('https://instagram.com', '_blank')}
+          >
+            <Instagram className="w-5 h-5" />
+            Instagram
+          </Button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Contact;
