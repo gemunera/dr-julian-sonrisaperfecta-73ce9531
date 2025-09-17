@@ -24,7 +24,7 @@ const Hero = () => {
           <img 
             src={logoDrPalacios} 
             alt="Logo Dr. Julián Palacios" 
-            className="h-20 md:h-24 lg:h-28 w-auto"
+            className="h-32 md:h-40 lg:h-48 w-auto"
           />
         </div>
 
