@@ -18,12 +18,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mt-40 sm:mt-56 md:mt-64 lg:mt-72 xl:mt-80">
         {/* Doctor Title */}
-        <div className="mb-12">
+        <div className="mb-6">
           <DoctorTitle />
         </div>
 
         {/* Specialties */}
-        <div className="mb-8">
+        <div className="mb-6">
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed">
             Odontología · Periodoncia · Implantología Oral · Diseño de Sonrisa
           </p>
@@ -33,7 +33,7 @@ const Hero = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="mb-8 space-y-2">
+        <div className="mb-6 space-y-1">
           <div className="flex items-center justify-center gap-2 text-white/90">
             <Phone size={18} />
             <span className="text-lg">+57 123 456 7890</span>
@@ -41,7 +41,7 @@ const Hero = () => {
             <span className="text-lg">+57 316 7580565</span>
           </div>
           
-          <div className="flex items-center justify-center gap-2 text-white/90 mt-4">
+          <div className="flex items-center justify-center gap-2 text-white/90 mt-2">
             <MapPin size={18} />
             <span className="text-lg">Cali / Colombia</span>
           </div>
