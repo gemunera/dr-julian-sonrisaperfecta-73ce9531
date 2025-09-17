@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
 import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
+import drPalaciosLogoName from "@/assets/dr-palacios-logo-name.png";
+import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
+import julianPalaciosGeneratedLogo from "@/assets/julian-palacios-generated-logo.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -10,7 +13,68 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        {/* Main Logo/Name */}
+        <div className="mb-8 flex justify-center">
+          <img 
+            src={julianPalaciosGeneratedLogo} 
+            alt="Dr. Julián Mauricio Palacios Gaviria - Odontólogo" 
+            className="h-40 md:h-48 lg:h-56 w-auto object-contain"
+          />
+        </div>
+
+        {/* Specialties */}
+        <div className="mb-8">
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed">
+            Odontología · Periodoncia · Implantología Oral · Diseño de Sonrisa
+          </p>
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed mt-2">
+            Carillas Dentales · Especialista Universidad del Valle
+          </p>
+        </div>
+
+        {/* Contact Info */}
+        <div className="mb-8 space-y-2">
+          <div className="flex items-center justify-center gap-2 text-white/90">
+            <Phone size={18} />
+            <span className="text-lg">+57 123 456 7890</span>
+            <span className="mx-2">·</span>
+            <span className="text-lg">+57 316 7580565</span>
+          </div>
+          
+          <div className="flex items-center justify-center gap-2 text-white/90 mt-4">
+            <MapPin size={18} />
+            <span className="text-lg">Cali / Colombia</span>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="mb-12">
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3 gap-2 shadow-professional">
+            <Calendar size={20} />
+            Agenda tu Cita
+          </Button>
+        </div>
+
+        {/* Social Media */}
+        <div className="flex justify-center space-x-4">
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+            <Facebook size={20} />
+          </Button>
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+            <Mail size={20} />
+          </Button>
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+            <Instagram size={20} />
+          </Button>
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+            <Linkedin size={20} />
+          </Button>
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+            <MessageCircle size={20} />
+          </Button>
+        </div>
+      </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
