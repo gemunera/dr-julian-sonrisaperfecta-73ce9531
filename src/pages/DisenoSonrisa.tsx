@@ -93,7 +93,18 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => {})}
+              {benefits.map((benefit, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1 inline-flex rounded-full bg-primary/10 text-primary p-1.5">
+                        <CheckCircle className="w-4 h-4" />
+                      </span>
+                      <p className="text-base text-foreground">{benefit}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
