@@ -4,12 +4,22 @@ import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
 import drPalaciosLogoName from "@/assets/dr-palacios-logo-name.png";
 import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
 import julianPalaciosGeneratedLogo from "@/assets/julian-palacios-generated-logo.png";
+import drPalaciosHeaderLogo from "@/assets/dr-palacios-header-logo.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      {/* Header Logo */}
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10">
+        <img 
+          src={drPalaciosHeaderLogo} 
+          alt="Dr. Julián Mauricio Palacios Gaviria - Logo" 
+          className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90"
+        />
       </div>
 
       {/* Content */}
