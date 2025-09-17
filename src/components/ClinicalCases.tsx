@@ -68,10 +68,7 @@ const ClinicalCases = () => {
             <div className="text-sm text-muted-foreground">Casos Exitosos</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg shadow-card">
-            <div className="flex items-center justify-center gap-1 text-3xl font-bold text-primary mb-2">
-              <Star className="fill-current" size={24} />
-              4.9
-            </div>
+            
             <div className="text-sm text-muted-foreground">Satisfacción Promedio</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg shadow-card">
