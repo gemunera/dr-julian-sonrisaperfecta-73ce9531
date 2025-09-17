@@ -1,76 +1,30 @@
 import Navigation from "@/components/Navigation";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Heart, Microscope, Users, CheckCircle, AlertTriangle, Stethoscope, Award } from "lucide-react";
-import beforeAfterPeriodontics from "@/assets/before-after-periodontics.jpg";
-
+import { Shield, Heart, Microscope, Users, CheckCircle, AlertTriangle, Stethoscope } from "lucide-react";
 const Periodoncia = () => {
-  const treatments = [
-    {
-      title: "Limpieza Profunda",
-      description: "Eliminación de sarro y placa bacteriana por debajo de la línea de las encías",
-      icon: Microscope,
-      benefits: ["Elimina infecciones", "Previene pérdida ósea", "Mejora halitosis"]
-    },
-    {
-      title: "Cirugía Periodontal",
-      description: "Tratamiento avanzado para casos severos de enfermedad periodontal",
-      icon: Stethoscope,
-      benefits: ["Regeneración tisular", "Preserva dientes", "Resultados duraderos"]
-    },
-    {
-      title: "Mantenimiento",
-      description: "Cuidado preventivo continuo para mantener la salud de las encías",
-      icon: Heart,
-      benefits: ["Prevención efectiva", "Detección temprana", "Sonrisa saludable"]
-    }
-  ];
-
-  const symptoms = [
-    "Encías rojas o inflamadas",
-    "Sangrado al cepillarse",
-    "Mal aliento persistente",
-    "Retracción de encías",
-    "Dientes flojos o móviles",
-    "Dolor al masticar"
-  ];
-
-  const prevention = [
-    "Cepillado correcto 2 veces al día",
-    "Uso diario de hilo dental",
-    "Enjuague bucal antibacteriano",
-    "Visitas regulares al periodoncista",
-    "Evitar el tabaco",
-    "Dieta balanceada"
-  ];
-
-  const clinicalCases = [
-    {
-      beforeImage: beforeAfterPeriodontics,
-      afterImage: beforeAfterPeriodontics,
-      title: "Tratamiento Periodontal Completo",
-      category: "Periodoncia"
-    },
-    {
-      beforeImage: beforeAfterPeriodontics,
-      afterImage: beforeAfterPeriodontics,
-      title: "Regeneración de Encías",
-      category: "Cirugía Periodontal"
-    },
-    {
-      beforeImage: beforeAfterPeriodontics,
-      afterImage: beforeAfterPeriodontics,
-      title: "Limpieza Profunda Avanzada",
-      category: "Tratamiento Conservador"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const treatments = [{
+    title: "Limpieza Profunda",
+    description: "Eliminación de sarro y placa bacteriana por debajo de la línea de las encías",
+    icon: Microscope,
+    benefits: ["Elimina infecciones", "Previene pérdida ósea", "Mejora halitosis"]
+  }, {
+    title: "Cirugía Periodontal",
+    description: "Tratamiento avanzado para casos severos de enfermedad periodontal",
+    icon: Stethoscope,
+    benefits: ["Regeneración tisular", "Preserva dientes", "Resultados duraderos"]
+  }, {
+    title: "Mantenimiento",
+    description: "Cuidado preventivo continuo para mantener la salud de las encías",
+    icon: Heart,
+    benefits: ["Prevención efectiva", "Detección temprana", "Sonrisa saludable"]
+  }];
+  const symptoms = ["Encías rojas o inflamadas", "Sangrado al cepillarse", "Mal aliento persistente", "Retracción de encías", "Dientes flojos o móviles", "Dolor al masticar"];
+  const prevention = ["Cepillado correcto 2 veces al día", "Uso diario de hilo dental", "Enjuague bucal antibacteriano", "Visitas regulares al periodoncista", "Evitar el tabaco", "Dieta balanceada"];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       <main className="pt-16">
@@ -117,8 +71,7 @@ const Periodoncia = () => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {treatments.map((treatment, index) => (
-                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+              {treatments.map((treatment, index) => <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <treatment.icon className="w-12 h-12 text-primary mx-auto mb-4" />
                     <CardTitle className="text-xl">{treatment.title}</CardTitle>
@@ -126,19 +79,16 @@ const Periodoncia = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-left">
-                      {treatment.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm">
+                      {treatment.benefits.map((benefit, idx) => <li key={idx} className="flex items-center gap-2 text-sm">
                           <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                           {benefit}
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                     <Button className="w-full mt-4" variant="outline">
                       Más Información
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -160,12 +110,10 @@ const Periodoncia = () => {
                   Si presentas alguno de estos síntomas, agenda una cita inmediatamente.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {symptoms.map((symptom, index) => (
-                    <div key={index} className="flex items-center gap-2">
+                  {symptoms.map((symptom, index) => <div key={index} className="flex items-center gap-2">
                       <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0" />
                       <span className="text-sm">{symptom}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
               
@@ -178,12 +126,10 @@ const Periodoncia = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {prevention.map((tip, index) => (
-                      <li key={index} className="flex items-center gap-2">
+                    {prevention.map((tip, index) => <li key={index} className="flex items-center gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                         <span className="text-sm">{tip}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
               </Card>
@@ -191,72 +137,12 @@ const Periodoncia = () => {
           </div>
         </section>
 
-        {/* Clinical Cases Section */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
-                <Award className="w-4 h-4 mr-2" />
-                Casos Clínicos Reales
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Transformaciones Periodontales
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Descubre los resultados excepcionales de nuestros tratamientos periodontales especializados
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {clinicalCases.map((caseItem, index) => (
-                <BeforeAfterSlider
-                  key={index}
-                  beforeImage={caseItem.beforeImage}
-                  afterImage={caseItem.afterImage}
-                  title={caseItem.title}
-                  category={caseItem.category}
-                />
-              ))}
-            </div>
-            
-            <div className="text-center mt-12">
-              <Button size="lg" className="gap-2">
-                <Award className="w-5 h-5" />
-                Ver Más Casos Periodontales
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-16 bg-primary text-primary-foreground">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Tu Salud Periodontal es Nuestra Prioridad
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Como especialista certificado en periodoncia, el Dr. Palacios cuenta con 
-              la experiencia y tecnología necesaria para preservar la salud de tus encías 
-              y el soporte de tus dientes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="gap-2">
-                <Stethoscope className="w-5 h-5" />
-                Consulta Especializada
-              </Button>
-              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary">
-                <Shield className="w-5 h-5" />
-                Plan de Prevención
-              </Button>
-            </div>
-          </div>
-        </section>
+        
       </main>
       
       <Footer />
       <WhatsAppFloat />
-    </div>
-  );
+    </div>;
 };
-
 export default Periodoncia;
