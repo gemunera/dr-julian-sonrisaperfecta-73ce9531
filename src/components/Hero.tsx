@@ -34,12 +34,7 @@ const Hero = () => {
 
         {/* Contact Info */}
         <div className="mb-3 space-y-1">
-          <div className="flex items-center justify-center gap-2 text-white/90">
-            <Phone size={18} />
-            <span className="text-lg">+57 123 456 7890</span>
-            <span className="mx-2">·</span>
-            <span className="text-lg">+57 316 7580565</span>
-          </div>
+          
           
           <div className="flex items-center justify-center gap-2 text-white/90 mt-2">
             <MapPin size={18} />
