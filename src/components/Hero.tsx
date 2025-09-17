@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
 import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
-import julianPalaciosLogo from "@/assets/julian-palacios-logo.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -19,28 +18,9 @@ const Hero = () => {
 
         {/* Specialties */}
         <div className="mb-8">
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed">
-            Odontología · Periodoncia · Implantología Oral · Diseño de Sonrisa
-          </p>
+          
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed mt-2">
             Carillas Dentales · Especialista Universidad del Valle
-          </p>
-        </div>
-
-        {/* Doctor Name and Logo */}
-        <div className="mb-8 flex flex-col items-center">
-          <div className="mb-6">
-            <img 
-              src={julianPalaciosLogo} 
-              alt="Dr. Julian Mauricio Palacios Gaviria Logo" 
-              className="h-32 md:h-40 lg:h-48 w-auto mx-auto"
-            />
-          </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-white tracking-wide">
-            Julian Mauricio Palacios Gaviria
-          </h1>
-          <p className="text-lg md:text-xl text-white/80 font-light tracking-widest mt-2">
-            PERIODONTOLOGY · IMPLANTOLOGY · ORAL ESTHETIC
           </p>
         </div>
 
@@ -68,23 +48,7 @@ const Hero = () => {
         </div>
 
         {/* Social Media */}
-        <div className="flex justify-center space-x-4">
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
-            <Facebook size={20} />
-          </Button>
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
-            <Mail size={20} />
-          </Button>
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
-            <Instagram size={20} />
-          </Button>
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
-            <Linkedin size={20} />
-          </Button>
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
-            <MessageCircle size={20} />
-          </Button>
-        </div>
+        
       </div>
 
       {/* Scroll Indicator */}
