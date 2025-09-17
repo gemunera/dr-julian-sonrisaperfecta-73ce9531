@@ -3,6 +3,7 @@ import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, Ma
 import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
 import drPalaciosLogoName from "@/assets/dr-palacios-logo-name.png";
 import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
+import julianPalaciosGeneratedLogo from "@/assets/julian-palacios-generated-logo.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -16,7 +17,7 @@ const Hero = () => {
         {/* Main Logo/Name */}
         <div className="mb-8 flex justify-center">
           <img 
-            src={drPalaciosLogoSide} 
+            src={julianPalaciosGeneratedLogo} 
             alt="Dr. Julián Mauricio Palacios Gaviria - Odontólogo" 
             className="h-40 md:h-48 lg:h-56 w-auto object-contain"
           />
