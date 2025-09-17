@@ -18,9 +18,7 @@ const Hero = () => {
 
         {/* Specialties */}
         <div className="mb-8">
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed">
-            Odontología · Periodoncia · Implantología Oral · Diseño de Sonrisa
-          </p>
+          
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed mt-2">
             Carillas Dentales · Especialista Universidad del Valle
           </p>
