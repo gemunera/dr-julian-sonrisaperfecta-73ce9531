@@ -118,7 +118,8 @@ const About = () => {
             <img
               src={drPalaciosScrubs}
               alt="Dr. Julián Palacios en su consultorio"
-              className="w-full h-auto rounded-2xl shadow-professional"
+              className="w-full h-auto rounded-2xl shadow-professional object-cover object-center"
+              style={{ aspectRatio: '4/5', objectPosition: 'center 20%' }}
             />
             <div className="absolute -top-4 -left-4 bg-primary text-primary-foreground p-4 rounded-xl shadow-card">
               <div className="text-center">
