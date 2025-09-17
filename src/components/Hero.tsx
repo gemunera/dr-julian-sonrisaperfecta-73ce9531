@@ -56,7 +56,7 @@ const Hero = () => {
         </div>
 
         {/* Social Media */}
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center items-center space-x-4">
           <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <Facebook size={20} />
           </Button>
@@ -72,6 +72,13 @@ const Hero = () => {
           <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <MessageCircle size={20} />
           </Button>
+          
+          {/* Scroll Indicator */}
+          <div className="ml-6">
+            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -82,13 +89,6 @@ const Hero = () => {
           alt="Dr. Julián Mauricio Palacios Gaviria - Logo" 
           className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90"
         />
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
-        </div>
       </div>
     </section>;
 };
