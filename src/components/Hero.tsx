@@ -61,9 +61,7 @@ const Hero = () => {
           <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <Instagram size={20} />
           </Button>
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
-            <Linkedin size={20} />
-          </Button>
+          
           <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <MessageCircle size={20} />
           </Button>
