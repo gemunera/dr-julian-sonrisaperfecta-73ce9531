@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import ClinicalCases from "@/components/ClinicalCases";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 
 const CasosClinicosPage = () => {
@@ -10,6 +11,7 @@ const CasosClinicosPage = () => {
         <ClinicalCases />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

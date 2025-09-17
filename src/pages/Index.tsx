@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import ClinicalCases from "@/components/ClinicalCases";
 import Contact from "@/components/Contact";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

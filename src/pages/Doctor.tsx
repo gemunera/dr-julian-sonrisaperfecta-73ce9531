@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import About from "@/components/About";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 
 const Doctor = () => {
@@ -10,6 +11,7 @@ const Doctor = () => {
         <About />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Contact from "@/components/Contact";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 
 const Contacto = () => {
@@ -10,6 +11,7 @@ const Contacto = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

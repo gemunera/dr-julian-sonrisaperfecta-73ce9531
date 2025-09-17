@@ -10,11 +10,8 @@ const Navigation = () => {
     name: "Dr. Julián Palacios",
     href: "/doctor"
   }, {
-    name: "Diseño de Sonrisa",
+    name: "Diseños de Sonrisa",
     href: "/diseno-sonrisa"
-  }, {
-    name: "Carillas Dentales",
-    href: "/carillas"
   }, {
     name: "Periodoncia",
     href: "/periodoncia"
