@@ -1,9 +1,9 @@
 const DoctorTitle = () => {
   return (
     <div className="flex flex-col items-center space-y-4">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-wider leading-tight">
-        <span className="font-normal">Dr.</span>{" "}
-        <span className="font-extralight">Julián Palacios</span>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-medium text-white tracking-widest leading-tight uppercase">
+        <span className="font-normal">DR.</span>{" "}
+        <span className="font-light">JULIÁN PALACIOS</span>
       </h1>
       
       {/* Elegant underline */}
