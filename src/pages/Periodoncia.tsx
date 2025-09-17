@@ -73,10 +73,12 @@ const Periodoncia = () => {
                   Si presentas alguno de estos síntomas, agenda una cita inmediatamente.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {symptoms.map((symptom, index) => <div key={index} className="flex items-center gap-2">
+                  {symptoms.map((symptom, index) => (
+                    <div key={index} className="flex items-center gap-2">
                       <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0" />
                       <span className="text-sm">{symptom}</span>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
               
@@ -89,10 +91,12 @@ const Periodoncia = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {prevention.map((tip, index) => <li key={index} className="flex items-center gap-2">
+                    {prevention.map((tip, index) => (
+                      <li key={index} className="flex items-center gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                         <span className="text-sm">{tip}</span>
-                      </li>)}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
