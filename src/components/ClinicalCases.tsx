@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, Clock } from "lucide-react";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 const ClinicalCases = () => {
   const cases = [{
     id: 1,
@@ -110,25 +111,8 @@ const ClinicalCases = () => {
           </div>
         </div>
 
-        {/* Testimonial */}
-        <div className="mt-16">
-          <Card className="border-0 shadow-card max-w-4xl mx-auto">
-            <CardContent className="p-8 text-center">
-              <div className="flex justify-center mb-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="text-primary fill-current" size={20} />)}
-              </div>
-              <blockquote className="text-lg text-muted-foreground italic mb-4">
-                "El Dr. Palacios no solo transformó mi sonrisa, sino que cambió mi vida. 
-                Su profesionalismo, atención al detalle y el resultado final superaron 
-                todas mis expectativas. Recomiendo su trabajo al 100%."
-              </blockquote>
-              <cite className="text-foreground font-semibold">
-                María González
-              </cite>
-              <p className="text-sm text-muted-foreground">Diseño de Sonrisa Completo</p>
-            </CardContent>
-          </Card>
-        </div>
+        {/* Testimonials Carousel */}
+        <TestimonialsCarousel />
       </div>
     </section>;
 };
