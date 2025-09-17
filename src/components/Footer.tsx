@@ -126,7 +126,7 @@ const Footer = () => {
             <div className="flex items-center gap-1 text-primary-foreground/80 text-sm">
               
               <Heart size={16} className="fill-current text-red-400" />
-              <span>para transformar sonrisas</span>
+              
             </div>
           </div>
         </div>
