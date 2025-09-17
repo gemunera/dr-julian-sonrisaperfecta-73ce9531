@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
 import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
+import logoDrPalacios from "@/assets/logo-dr-palacios.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -13,7 +14,18 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Logo/Name */}
         <div className="mb-8">
-          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 tracking-wide">
+            Julian Mauricio Palacios Gaviria
+          </h1>
+        </div>
+
+        {/* Logo */}
+        <div className="mb-8 flex justify-center">
+          <img 
+            src={logoDrPalacios} 
+            alt="Logo Dr. Julián Palacios" 
+            className="h-20 md:h-24 lg:h-28 w-auto"
+          />
         </div>
 
         {/* Specialties */}
