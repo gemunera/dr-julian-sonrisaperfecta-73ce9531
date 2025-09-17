@@ -1,18 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { 
-  Phone, 
-  MessageCircle, 
-  Mail, 
-  MapPin,
-  Instagram,
-  Facebook,
-  Linkedin,
-  Heart
-} from "lucide-react";
-
+import { Phone, MessageCircle, Mail, MapPin, Instagram, Facebook, Linkedin, Heart } from "lucide-react";
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -30,9 +19,7 @@ const Footer = () => {
               <Button size="sm" variant="secondary" className="p-2">
                 <Facebook size={18} />
               </Button>
-              <Button size="sm" variant="secondary" className="p-2">
-                <Linkedin size={18} />
-              </Button>
+              
             </div>
           </div>
 
@@ -140,8 +127,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
