@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
 import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
-
 const Hero = () => {
-  return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={drPalaciosProcedure}
-          alt="Dr. Julián Palacios realizando procedimiento dental"
-          className="w-full h-full object-cover"
-        />
+        <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
@@ -19,10 +13,7 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Logo/Name */}
         <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
-            <span className="block text-5xl md:text-7xl lg:text-8xl">Julian Mauricio</span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl">Palacios Gaviria</span>
-          </h1>
+          
         </div>
 
         {/* Specialties */}
@@ -63,39 +54,19 @@ const Hero = () => {
 
         {/* Social Media */}
         <div className="flex justify-center space-x-4">
-          <Button
-            size="sm"
-            variant="outline"
-            className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white"
-          >
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <Facebook size={20} />
           </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white"
-          >
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <Mail size={20} />
           </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white"
-          >
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <Instagram size={20} />
           </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white"
-          >
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <Linkedin size={20} />
           </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white"
-          >
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
             <MessageCircle size={20} />
           </Button>
         </div>
@@ -107,8 +78,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
