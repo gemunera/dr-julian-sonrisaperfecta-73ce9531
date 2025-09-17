@@ -25,34 +25,20 @@ const Navigation = () => {
     name: "Contacto",
     href: "/contacto"
   }];
-  return <nav className="bg-transparent backdrop-blur-sm border-b border-white/10 fixed top-0 z-50 w-full">
+  return <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 fixed top-0 z-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-white">
-              Dr. Julián Palacios
-            </h1>
-            <p className="text-xs text-white/80">Especialista en Periodoncia</p>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map(item => <a key={item.name} href={item.href} className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200">
+        <div className="flex justify-center items-center h-20">
+          {/* Desktop Navigation - Centered and Distributed */}
+          <div className="hidden lg:flex items-center justify-center w-full">
+            <div className="flex items-center space-x-8 xl:space-x-12">
+              {navItems.map(item => <a key={item.name} href={item.href} className="text-white/90 hover:text-white px-4 py-2 text-sm font-medium transition-colors duration-300 uppercase tracking-wide">
                   {item.name}
                 </a>)}
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-2">
-            
-            
-          </div>
-
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden absolute right-4">
             <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white hover:bg-white/10">
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
