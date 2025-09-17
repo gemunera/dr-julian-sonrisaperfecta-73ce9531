@@ -1,10 +1,12 @@
 import Navigation from "@/components/Navigation";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Heart, Microscope, Users, CheckCircle, AlertTriangle, Stethoscope } from "lucide-react";
+import { Shield, Heart, Microscope, Users, CheckCircle, AlertTriangle, Stethoscope, Award } from "lucide-react";
+import beforeAfterPeriodontics from "@/assets/before-after-periodontics.jpg";
 
 const Periodoncia = () => {
   const treatments = [
@@ -44,6 +46,27 @@ const Periodoncia = () => {
     "Visitas regulares al periodoncista",
     "Evitar el tabaco",
     "Dieta balanceada"
+  ];
+
+  const clinicalCases = [
+    {
+      beforeImage: beforeAfterPeriodontics,
+      afterImage: beforeAfterPeriodontics,
+      title: "Tratamiento Periodontal Completo",
+      category: "Periodoncia"
+    },
+    {
+      beforeImage: beforeAfterPeriodontics,
+      afterImage: beforeAfterPeriodontics,
+      title: "Regeneración de Encías",
+      category: "Cirugía Periodontal"
+    },
+    {
+      beforeImage: beforeAfterPeriodontics,
+      afterImage: beforeAfterPeriodontics,
+      title: "Limpieza Profunda Avanzada",
+      category: "Tratamiento Conservador"
+    }
   ];
 
   return (
@@ -164,6 +187,43 @@ const Periodoncia = () => {
                   </ul>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Clinical Cases Section */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
+                <Award className="w-4 h-4 mr-2" />
+                Casos Clínicos Reales
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                Transformaciones Periodontales
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Descubre los resultados excepcionales de nuestros tratamientos periodontales especializados
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {clinicalCases.map((caseItem, index) => (
+                <BeforeAfterSlider
+                  key={index}
+                  beforeImage={caseItem.beforeImage}
+                  afterImage={caseItem.afterImage}
+                  title={caseItem.title}
+                  category={caseItem.category}
+                />
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Button size="lg" className="gap-2">
+                <Award className="w-5 h-5" />
+                Ver Más Casos Periodontales
+              </Button>
             </div>
           </div>
         </section>
