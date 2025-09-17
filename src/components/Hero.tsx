@@ -82,14 +82,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Logo Below Content */}
-      <div className="relative z-10 flex justify-center mt-8">
-        <img 
-          src={drPalaciosFooterLogo} 
-          alt="Dr. Julián Mauricio Palacios Gaviria - Logo" 
-          className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90"
-        />
-      </div>
     </section>;
 };
 export default Hero;
