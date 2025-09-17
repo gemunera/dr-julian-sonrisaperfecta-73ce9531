@@ -6,51 +6,45 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Smile, Star, Sparkles, Clock, CheckCircle, Heart, Award } from "lucide-react";
-
 import beforeAfterSmileDesign from "@/assets/before-after-smile-design.jpg";
 import beforeAfterVeneers from "@/assets/before-after-veneers.jpg";
 import beforeAfterImplants from "@/assets/before-after-implants.jpg";
-
 const DisenoSonrisa = () => {
-  const benefits = [
-    "Análisis facial completo",
-    "Simulación digital previa",
-    "Resultados naturales y armónicos",
-    "Mejora de la autoestima",
-    "Procedimiento mínimamente invasivo",
-    "Resultados duraderos"
-  ];
-
-  const process = [
-    { step: 1, title: "Consulta Inicial", description: "Evaluación facial y dental completa" },
-    { step: 2, title: "Diseño Digital", description: "Simulación 3D de tu nueva sonrisa" },
-    { step: 3, title: "Preparación", description: "Preparación mínima de dientes" },
-    { step: 4, title: "Resultado Final", description: "Colocación y ajuste perfecto" }
-  ];
-
-  const clinicalCases = [
-    {
-      beforeImage: beforeAfterSmileDesign,
-      afterImage: beforeAfterSmileDesign,
-      title: "Diseño de Sonrisa Completo",
-      category: "Diseño de Sonrisa"
-    },
-    {
-      beforeImage: beforeAfterVeneers,
-      afterImage: beforeAfterVeneers,
-      title: "Carillas de Porcelana",
-      category: "Carillas Dentales"
-    },
-    {
-      beforeImage: beforeAfterImplants,
-      afterImage: beforeAfterImplants,
-      title: "Rehabilitación con Implantes",
-      category: "Implantología"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const benefits = ["Análisis facial completo", "Simulación digital previa", "Resultados naturales y armónicos", "Mejora de la autoestima", "Procedimiento mínimamente invasivo", "Resultados duraderos"];
+  const process = [{
+    step: 1,
+    title: "Consulta Inicial",
+    description: "Evaluación facial y dental completa"
+  }, {
+    step: 2,
+    title: "Diseño Digital",
+    description: "Simulación 3D de tu nueva sonrisa"
+  }, {
+    step: 3,
+    title: "Preparación",
+    description: "Preparación mínima de dientes"
+  }, {
+    step: 4,
+    title: "Resultado Final",
+    description: "Colocación y ajuste perfecto"
+  }];
+  const clinicalCases = [{
+    beforeImage: beforeAfterSmileDesign,
+    afterImage: beforeAfterSmileDesign,
+    title: "Diseño de Sonrisa Completo",
+    category: "Diseño de Sonrisa"
+  }, {
+    beforeImage: beforeAfterVeneers,
+    afterImage: beforeAfterVeneers,
+    title: "Carillas de Porcelana",
+    category: "Carillas Dentales"
+  }, {
+    beforeImage: beforeAfterImplants,
+    afterImage: beforeAfterImplants,
+    title: "Rehabilitación con Implantes",
+    category: "Implantología"
+  }];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       <main className="pt-16">
@@ -102,14 +96,9 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-6">
-                    <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <p className="font-medium text-foreground">{benefit}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              {benefits.map((benefit, index) => <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+                  
+                </Card>)}
             </div>
           </div>
         </section>
@@ -127,8 +116,7 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {process.map((item, index) => (
-                <Card key={index} className="text-center p-6">
+              {process.map((item, index) => <Card key={index} className="text-center p-6">
                   <CardHeader>
                     <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                       {item.step}
@@ -138,8 +126,7 @@ const DisenoSonrisa = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{item.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -161,15 +148,7 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {clinicalCases.map((caseItem, index) => (
-                <BeforeAfterSlider
-                  key={index}
-                  beforeImage={caseItem.beforeImage}
-                  afterImage={caseItem.afterImage}
-                  title={caseItem.title}
-                  category={caseItem.category}
-                />
-              ))}
+              {clinicalCases.map((caseItem, index) => <BeforeAfterSlider key={index} beforeImage={caseItem.beforeImage} afterImage={caseItem.afterImage} title={caseItem.title} category={caseItem.category} />)}
             </div>
             
             <div className="text-center mt-12">
@@ -206,8 +185,6 @@ const DisenoSonrisa = () => {
       
       <Footer />
       <WhatsAppFloat />
-    </div>
-  );
+    </div>;
 };
-
 export default DisenoSonrisa;
