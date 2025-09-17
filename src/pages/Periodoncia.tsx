@@ -69,24 +69,7 @@ const Periodoncia = () => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {treatments.map((treatment, index) => <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <treatment.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <CardTitle className="text-xl">{treatment.title}</CardTitle>
-                    <p className="text-muted-foreground text-sm">{treatment.description}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 text-left">
-                      {treatment.benefits.map((benefit, idx) => <li key={idx} className="flex items-center gap-2 text-sm">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          {benefit}
-                        </li>)}
-                    </ul>
-                    <Button className="w-full mt-4" variant="outline">
-                      Más Información
-                    </Button>
-                  </CardContent>
-                </Card>)}
+              {treatments.map((treatment, index) => {})}
             </div>
           </div>
         </section>
