@@ -157,6 +157,7 @@ const Services = () => {
                       <Button 
                         variant={service.popular ? "default" : "outline"} 
                         className="flex-1 gap-2 group-hover:scale-105 transition-transform"
+                        onClick={() => {}}
                       >
                         Consultar sobre {service.title}
                         <ArrowRight size={16} />
@@ -183,11 +184,11 @@ const Services = () => {
               perfecto para tus necesidades y objetivos estéticos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2" onClick={() => {}}>
                 Agendar Consulta Gratuita
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={() => {}}>
                 Ver Casos Clínicos
               </Button>
             </div>

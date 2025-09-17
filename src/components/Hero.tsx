@@ -44,7 +44,7 @@ const Hero = () => {
 
         {/* CTA Button */}
         <div className="mb-6">
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3 gap-2 shadow-professional">
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3 gap-2 shadow-professional" onClick={() => {}}>
             <Calendar size={20} />
             Agenda tu Cita
           </Button>

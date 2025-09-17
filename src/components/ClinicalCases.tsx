@@ -100,11 +100,11 @@ const ClinicalCases = () => {
               Agenda tu consulta y descubre cómo podemos transformar tu sonrisa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="gap-2">
+              <Button variant="secondary" size="lg" className="gap-2" onClick={() => {}}>
                 Agendar Consulta
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="outline" size="lg" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button variant="outline" size="lg" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => {}}>
                 Ver Más Casos
               </Button>
             </div>
