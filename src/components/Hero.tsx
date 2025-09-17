@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
 import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
-import logoDrPalacios from "@/assets/logo-dr-palacios.png";
 const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover object-top" />
+        <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
@@ -14,18 +13,7 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Logo/Name */}
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-4 tracking-wide">
-            Julian Mauricio Palacios Gaviria
-          </h1>
-        </div>
-
-        {/* Logo */}
-        <div className="mb-8 flex justify-center">
-          <img 
-            src={logoDrPalacios} 
-            alt="Logo Dr. Julián Palacios" 
-            className="h-[80rem] md:h-[100rem] lg:h-[120rem] w-auto max-w-full"
-          />
+          
         </div>
 
         {/* Specialties */}
@@ -44,12 +32,9 @@ const Hero = () => {
             <Phone size={18} />
             <span className="text-lg">+57 123 456 7890</span>
             <span className="mx-2">·</span>
-            <span className="text-lg">+57 300 445 3547</span>
+            <span className="text-lg">+57 316 7580565</span>
           </div>
-          <div className="flex items-center justify-center gap-2 text-white/90">
-            <Mail size={18} />
-            <span className="text-lg">julianpalaciosgaviria05@gmail.com</span>
-          </div>
+          
           <div className="flex items-center justify-center gap-2 text-white/90 mt-4">
             <MapPin size={18} />
             <span className="text-lg">Cali / Colombia</span>
