@@ -36,7 +36,9 @@ const Periodoncia = () => {
                 <Shield className="w-4 h-4 mr-2" />
                 Especialidad del Dr. Palacios
               </Badge>
-              
+              <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+                Periodoncia
+              </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 La base de una sonrisa saludable está en encías sanas. Como especialista en 
                 periodoncia, el Dr. Palacios ofrece tratamientos avanzados para prevenir y 
