@@ -47,32 +47,14 @@ const Periodoncia = () => {
                   <Heart className="w-5 h-5" />
                   Evaluación Periodontal
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2">
-                  <Users className="w-5 h-5" />
-                  Casos Tratados
-                </Button>
+                
               </div>
             </div>
           </div>
         </section>
 
         {/* Treatments Section */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Tratamientos Especializados
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Soluciones integrales para la salud de tus encías y soporte dental
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {treatments.map((treatment, index) => {})}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Warning Signs Section */}
         <section className="py-16 bg-amber-50">
