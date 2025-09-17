@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import BeforeAfterModal from "@/components/BeforeAfterModal";
 import { 
   Smile, 
   Sparkles, 
@@ -10,6 +11,12 @@ import {
   CheckCircle,
   ArrowRight
 } from "lucide-react";
+
+// Import images
+import beforeAfterSmileDesign from "@/assets/before-after-smile-design.jpg";
+import beforeAfterVeneers from "@/assets/before-after-veneers.jpg";
+import beforeAfterPeriodontics from "@/assets/before-after-periodontics.jpg";
+import beforeAfterImplants from "@/assets/before-after-implants.jpg";
 
 const Services = () => {
   const services = [
@@ -26,7 +33,8 @@ const Services = () => {
         "Resultados naturales"
       ],
       duration: "2-4 visitas",
-      popular: true
+      popular: true,
+      beforeAfterImage: beforeAfterSmileDesign
     },
     {
       id: "carillas",
@@ -41,7 +49,8 @@ const Services = () => {
         "Mínima invasión"
       ],
       duration: "2-3 visitas",
-      popular: false
+      popular: false,
+      beforeAfterImage: beforeAfterVeneers
     },
     {
       id: "periodoncia",
@@ -56,7 +65,8 @@ const Services = () => {
         "Regeneración de tejidos"
       ],
       duration: "Según necesidad",
-      popular: false
+      popular: false,
+      beforeAfterImage: beforeAfterPeriodontics
     },
     {
       id: "implantologia",
@@ -71,7 +81,8 @@ const Services = () => {
         "Apariencia natural"
       ],
       duration: "3-6 meses",
-      popular: false
+      popular: false,
+      beforeAfterImage: beforeAfterImplants
     }
   ];
 
@@ -141,14 +152,20 @@ const Services = () => {
                     </ul>
                   </div>
 
-                  <div className="pt-4 border-t border-border">
-                    <Button 
-                      variant={service.popular ? "default" : "outline"} 
-                      className="w-full gap-2 group-hover:scale-105 transition-transform"
-                    >
-                      Consultar sobre {service.title}
-                      <ArrowRight size={16} />
-                    </Button>
+                  <div className="pt-4 border-t border-border space-y-3">
+                    <div className="flex gap-2">
+                      <Button 
+                        variant={service.popular ? "default" : "outline"} 
+                        className="flex-1 gap-2 group-hover:scale-105 transition-transform"
+                      >
+                        Consultar sobre {service.title}
+                        <ArrowRight size={16} />
+                      </Button>
+                      <BeforeAfterModal 
+                        title={service.title}
+                        imageSrc={service.beforeAfterImage}
+                      />
+                    </div>
                   </div>
                 </CardContent>
               </Card>
