@@ -11,23 +11,14 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* Side Logo */}
-      <div className="absolute right-4 md:right-8 lg:right-12 top-1/2 transform -translate-y-1/2 z-10">
-        <img 
-          src={drPalaciosLogoSide} 
-          alt="Dr. Julián Mauricio Palacios Gaviria" 
-          className="h-24 md:h-32 lg:h-40 w-auto object-contain opacity-90"
-        />
-      </div>
-
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Logo/Name */}
         <div className="mb-8 flex justify-center">
           <img 
-            src={drPalaciosLogoName} 
+            src={drPalaciosLogoSide} 
             alt="Dr. Julián Mauricio Palacios Gaviria - Odontólogo" 
-            className="h-32 md:h-40 lg:h-48 w-auto object-contain"
+            className="h-40 md:h-48 lg:h-56 w-auto object-contain"
           />
         </div>
 
