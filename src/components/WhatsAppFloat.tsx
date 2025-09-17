@@ -13,7 +13,7 @@ const WhatsAppIcon = () => (
 
 const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "573001234567"; // Reemplazar con el número real del Dr. Palacios
+    const phoneNumber = "573167580565"; // Número del Dr. Palacios
     const message = "Hola Dr. Palacios, me interesa agendar una consulta";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -24,7 +24,7 @@ const WhatsAppFloat = () => {
       <Button
         onClick={handleWhatsAppClick}
         size="lg"
-        className="rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+        className="rounded-full w-16 h-16 bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
         aria-label="Contactar por WhatsApp"
       >
         <WhatsAppIcon />
