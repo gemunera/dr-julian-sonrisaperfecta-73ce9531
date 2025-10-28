@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, Clock } from "lucide-react";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import { useLanguage } from "@/contexts/LanguageContext";
 const ClinicalCases = () => {
   const cases = [{
     id: 1,
@@ -52,13 +53,12 @@ const ClinicalCases = () => {
   return <section id="casos" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Casos Clínicos</Badge>
+          <Badge variant="outline" className="mb-4">{t('cases.badge')}</Badge>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Transformaciones Reales
+            {t('cases.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Descubre cómo hemos transformado la vida de nuestros pacientes con 
-            tratamientos personalizados y resultados excepcionales
+            {t('cases.subtitle')}
           </p>
         </div>
 
@@ -89,7 +89,7 @@ const ClinicalCases = () => {
             </Card>)}
         </div>
 
-        {/* Call to Action */}
+  {/* Call to Action */}
         <div className="text-center">
           <div className="bg-gradient-primary text-primary-foreground p-8 rounded-2xl shadow-professional max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">
@@ -101,11 +101,11 @@ const ClinicalCases = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" className="gap-2" onClick={() => {}}>
-                Agendar Consulta
+                {t('hero.cta')}
                 <ArrowRight size={18} />
               </Button>
               <Button variant="outline" size="lg" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => {}}>
-                Ver Más Casos
+                {t('cases.viewAll')}
               </Button>
             </div>
           </div>

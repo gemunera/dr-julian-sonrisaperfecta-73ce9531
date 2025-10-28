@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
+import { useLanguage } from "@/contexts/LanguageContext";
 interface BeforeAfterSliderProps {
   beforeImage: string;
   afterImage: string;
@@ -10,6 +10,7 @@ interface BeforeAfterSliderProps {
 }
 
 const BeforeAfterSlider = ({ beforeImage, afterImage, title, category }: BeforeAfterSliderProps) => {
+  const { t } = useLanguage();
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -82,11 +83,11 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, category }: BeforeA
             </div>
             
             {/* Labels */}
-            <div className="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/50 px-2 py-1 rounded">
-              ANTES
+            <div className="absolute bottom-4 left-4 text-white font-semibold text-sm bg-black/50 px-2 py-1 rounded uppercase">
+              {t('cases.before')}
             </div>
-            <div className="absolute bottom-4 right-4 text-white font-semibold text-sm bg-black/50 px-2 py-1 rounded">
-              DESPUÉS
+            <div className="absolute bottom-4 right-4 text-white font-semibold text-sm bg-black/50 px-2 py-1 rounded uppercase">
+              {t('cases.after')}
             </div>
           </div>
         </div>

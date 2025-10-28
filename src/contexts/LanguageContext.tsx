@@ -58,6 +58,8 @@ const translations = {
       home: 'Inicio',
       about: 'Sobre mí',
       services: 'Servicios',
+      periodontics: 'Periodoncia',
+      smileDesign: 'Diseño de Sonrisa',
       cases: 'Casos Clínicos',
       testimonials: 'Testimonios',
       contact: 'Contacto'
@@ -97,6 +99,13 @@ const translations = {
       title: 'Tratamientos Especializados',
       subtitle: 'Soluciones integrales para cada necesidad dental',
       viewMore: 'Ver más',
+      mostPopular: 'Más Popular',
+      benefitsTitle: 'Beneficios principales:',
+      help: {
+        title: '¿No estás seguro qué tratamiento necesitas?',
+        subtitle: 'Agenda una consulta personalizada y te ayudaremos a encontrar el tratamiento perfecto para tus necesidades y objetivos estéticos.',
+        bookFreeConsultation: 'Agendar Consulta Gratuita'
+      },
       periodontics: {
         title: 'Periodoncia',
         description: 'Cuidado integral de encías y tejidos de soporte dental'
@@ -119,6 +128,7 @@ const translations = {
       title: 'Casos Clínicos',
       subtitle: 'Transformaciones que cambian vidas',
       viewAll: 'Ver Todos los Casos',
+      viewResults: 'Ver Resultados',
       before: 'Antes',
       after: 'Después'
     },
@@ -153,6 +163,8 @@ const translations = {
       home: 'Home',
       about: 'About',
       services: 'Services',
+      periodontics: 'Periodontics',
+      smileDesign: 'Smile Design',
       cases: 'Clinical Cases',
       testimonials: 'Testimonials',
       contact: 'Contact'
@@ -192,6 +204,13 @@ const translations = {
       title: 'Specialized Treatments',
       subtitle: 'Comprehensive solutions for every dental need',
       viewMore: 'Learn more',
+      mostPopular: 'Most Popular',
+      benefitsTitle: 'Main benefits:',
+      help: {
+        title: "Not sure which treatment you need?",
+        subtitle: 'Book a personalized consultation and we will help you find the perfect treatment for your needs and aesthetic goals.',
+        bookFreeConsultation: 'Book Free Consultation'
+      },
       periodontics: {
         title: 'Periodontics',
         description: 'Comprehensive care for gums and dental support tissues'
@@ -214,6 +233,7 @@ const translations = {
       title: 'Clinical Cases',
       subtitle: 'Transformations that change lives',
       viewAll: 'View All Cases',
+      viewResults: 'View Results',
       before: 'Before',
       after: 'After'
     },

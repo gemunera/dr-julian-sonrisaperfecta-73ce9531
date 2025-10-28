@@ -14,10 +14,10 @@ const Navigation = () => {
     name: "Dr. Julián Palacios",
     href: "/doctor"
   }, {
-    name: "Diseños de Sonrisa",
+    name: t('nav.smileDesign'),
     href: "/diseno-sonrisa"
   }, {
-    name: "Periodoncia",
+    name: t('nav.periodontics'),
     href: "/periodoncia"
   }, {
     name: t('nav.cases'),
@@ -45,8 +45,8 @@ const Navigation = () => {
             onClick={toggleLanguage}
             className="text-white/90 hover:text-white hover:bg-white/10 gap-2 flex-shrink-0 px-3 sm:px-4"
           >
-            <span className="text-base sm:text-lg">{language === 'es' ? '🇺🇸' : '🇪🇸'}</span>
-            <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{language === 'es' ? 'English' : 'Español'}</span>
+            <span className="text-base sm:text-lg">{language === 'es' ? '🇪🇸' : '🇺🇸'}</span>
+            <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{language === 'es' ? 'ES / Español' : 'EN / English'}</span>
           </Button>
         </div>
       </div>

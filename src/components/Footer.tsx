@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail, MapPin, Instagram, Facebook, Linkedin, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 const WhatsAppIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.56-.01-.188 0-.669.25-.916.371C6.27 7.55 5.8 8.54 5.8 10.42c0 1.881 1.108 3.7 1.263 3.956.154.256 2.463 3.76 5.969 5.276.835.36 1.487.576 1.996.737.837.267 1.598.229 2.2.139.671-.1 2.062-.843 2.353-1.656.292-.813.292-1.51.206-1.656-.087-.146-.322-.232-.678-.405z" />
   </svg>;
 const Footer = () => {
+  const { t } = useLanguage();
   return <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
@@ -12,8 +14,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h3 className="text-2xl font-bold mb-4">Dr. Julián Palacios</h3>
             <p className="text-primary-foreground/80 mb-6">
-              Especialista en Periodoncia e Implantología. 
-              Transformando sonrisas con ciencia y estética.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-3">
               <Button size="sm" variant="secondary" className="p-2">
@@ -28,31 +29,31 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Servicios</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.services')}</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#diseno-sonrisa" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Diseño de Sonrisa
+                  {t('services.smileDesign.title')}
                 </a>
               </li>
               <li>
                 <a href="#carillas" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Carillas Dentales
+                  {t('services.veneers.title')}
                 </a>
               </li>
               <li>
                 <a href="#periodoncia" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Periodoncia
+                  {t('services.periodontics.title')}
                 </a>
               </li>
               <li>
                 <a href="#implantologia" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Implantología
+                  {t('services.implants.title')}
                 </a>
               </li>
               <li>
                 <a href="#casos" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Casos Clínicos
+                  {t('cases.title')}
                 </a>
               </li>
             </ul>
@@ -60,7 +61,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contacto</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.contact')}</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <WhatsAppIcon />
@@ -90,11 +91,11 @@ const Footer = () => {
 
           {/* Hours */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Horarios</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.schedule')}</h4>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-primary-foreground/80">Lun - Vie:</span>
-                <span>8:00 AM - 6:00 PM</span>
+                <span className="text-primary-foreground/80">{t('footer.scheduleTime').split(':')[0]}:</span>
+                <span>{t('footer.scheduleTime').split(':')[1]?.trim()}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-primary-foreground/80">Sábados:</span>
@@ -116,7 +117,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left">
               <p className="text-primary-foreground/80 text-sm">
-                © 2024 Dr. Julián Palacios. Todos los derechos reservados.
+                © 2024 Dr. Julián Palacios. {t('footer.rights')}
               </p>
               <p className="text-primary-foreground/60 text-xs mt-1">
                 Especialista en Periodoncia - Universidad del Valle

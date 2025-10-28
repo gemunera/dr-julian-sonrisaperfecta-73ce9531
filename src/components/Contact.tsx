@@ -1,19 +1,21 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Instagram, Facebook } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contacto" className="py-20 bg-gradient-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Contacto</Badge>
+          <Badge variant="outline" className="mb-4">{t('contact.badge')}</Badge>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Conecta con Nosotros
+            {t('contact.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Síguenos en nuestras redes sociales y mantente al día con nuestros tratamientos
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -53,4 +55,5 @@ const Contact = () => {
     </section>
   );
 };
+
 export default Contact;
