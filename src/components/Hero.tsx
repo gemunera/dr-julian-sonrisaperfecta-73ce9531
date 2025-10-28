@@ -7,7 +7,10 @@ import julianPalaciosGeneratedLogo from "@/assets/julian-palacios-generated-logo
 import drPalaciosHeaderLogo from "@/assets/dr-palacios-header-logo.png";
 import drPalaciosFooterLogo from "@/assets/dr-palacios-footer-logo.png";
 import DoctorTitle from "./DoctorTitle";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Hero = () => {
+  const { t } = useLanguage();
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -25,10 +28,7 @@ const Hero = () => {
         {/* Specialties */}
         <div className="mb-6">
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed">
-            Odontología · Periodoncia · Implantología Oral · Diseño de Sonrisa
-          </p>
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light tracking-wide leading-relaxed mt-2">
-            Carillas Dentales · Especialista Universidad del Valle
+            {t('hero.description')}
           </p>
         </div>
 
@@ -46,7 +46,7 @@ const Hero = () => {
         <div className="mb-6">
           <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3 gap-2 shadow-professional" onClick={() => {}}>
             <Calendar size={20} />
-            Agenda tu Cita
+            {t('hero.cta')}
           </Button>
         </div>
 
