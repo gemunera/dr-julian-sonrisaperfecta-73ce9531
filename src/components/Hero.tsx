@@ -14,12 +14,12 @@ const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover object-[50%_25%] sm:object-[50%_30%] md:object-[50%_35%] lg:object-center" />
+        <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover object-[50%_35%] sm:object-[50%_40%] md:object-[50%_45%] lg:object-center" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mt-52 sm:mt-72 md:mt-80 lg:mt-96 xl:mt-[28rem]">
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mt-24 sm:mt-32 md:mt-40 lg:mt-48 xl:mt-56">
         {/* Doctor Title */}
         <div className="mb-6">
           <DoctorTitle />
