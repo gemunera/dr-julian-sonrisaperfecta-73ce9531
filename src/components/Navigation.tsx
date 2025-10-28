@@ -20,9 +20,6 @@ const Navigation = () => {
     name: "Periodoncia",
     href: "/periodoncia"
   }, {
-    name: "Implantología",
-    href: "/implantologia"
-  }, {
     name: t('nav.cases'),
     href: "/casos-clinicos"
   }, {
@@ -30,12 +27,12 @@ const Navigation = () => {
     href: "/contacto"
   }];
   return <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 fixed top-0 z-50 w-full">
-      <div className="w-full mx-auto px-2 sm:px-4">
-        <div className="flex justify-between items-center h-16 sm:h-20 max-w-7xl mx-auto gap-2">
+      <div className="w-full mx-auto px-3 sm:px-6">
+        <div className="flex justify-between items-center h-16 sm:h-20 max-w-7xl mx-auto gap-3">
           {/* Navigation - Centered */}
           <div className="flex items-center justify-center flex-1 overflow-x-auto scrollbar-hide">
-            <div className="flex items-center justify-center space-x-0.5 sm:space-x-1 md:space-x-2 lg:space-x-4">
-              {navItems.map(item => <a key={item.name} href={item.href} className="text-white/90 hover:text-white px-1.5 sm:px-2 md:px-3 py-2 text-[0.65rem] sm:text-xs md:text-sm font-medium transition-colors duration-300 uppercase tracking-tight whitespace-nowrap flex-shrink-0 text-center">
+            <div className="flex items-center justify-center space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-6">
+              {navItems.map(item => <a key={item.name} href={item.href} className="text-white/90 hover:text-white px-2 sm:px-3 md:px-4 py-2 text-xs sm:text-sm md:text-base font-medium transition-colors duration-300 uppercase tracking-tight whitespace-nowrap flex-shrink-0 text-center">
                   {item.name}
                 </a>)}
             </div>
@@ -46,11 +43,10 @@ const Navigation = () => {
             variant="ghost"
             size="sm"
             onClick={toggleLanguage}
-            className="text-white/90 hover:text-white hover:bg-white/10 gap-1 sm:gap-2 flex-shrink-0 px-2 sm:px-3 h-8 sm:h-9"
+            className="text-white/90 hover:text-white hover:bg-white/10 gap-2 flex-shrink-0 px-3 sm:px-4"
           >
-            <Languages size={16} className="sm:w-[18px] sm:h-[18px]" />
-            <span className="text-[0.65rem] sm:text-xs font-medium whitespace-nowrap hidden xs:inline">{language === 'es' ? 'Inglés' : 'Español'}</span>
-            <span className="text-[0.65rem] font-medium xs:hidden">{language === 'es' ? 'EN' : 'ES'}</span>
+            <Languages size={18} />
+            <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{language === 'es' ? 'Inglés' : 'Español'}</span>
           </Button>
         </div>
       </div>
