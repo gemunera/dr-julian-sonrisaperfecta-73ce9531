@@ -18,6 +18,23 @@ const About = () => {
         </div>
 
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+          {/* Image */}
+          <div className="relative">
+            <img
+              src={drPalaciosScrubs}
+              alt="Dr. Julián Palacios en su consultorio"
+              className="w-full h-auto rounded-2xl shadow-professional object-cover object-center"
+              style={{ aspectRatio: '4/5', objectPosition: 'center 20%' }}
+            />
+            <div className="absolute -top-4 -left-4 bg-primary text-primary-foreground p-4 rounded-xl shadow-card">
+              <div className="text-center">
+                <div className="text-2xl font-bold">500+</div>
+                <div className="text-sm">Pacientes</div>
+                <div className="text-xs">Transformados</div>
+              </div>
+            </div>
+          </div>
+
           {/* Content */}
           <div className="mb-12 lg:mb-0">
             <div className="prose prose-lg max-w-none">
@@ -110,23 +127,6 @@ const About = () => {
                   <p className="text-sm">Salud oral integral y transformación estética</p>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-
-          {/* Image */}
-          <div className="relative">
-            <img
-              src={drPalaciosScrubs}
-              alt="Dr. Julián Palacios en su consultorio"
-              className="w-full h-auto rounded-2xl shadow-professional object-cover object-center"
-              style={{ aspectRatio: '4/5', objectPosition: 'center 20%' }}
-            />
-            <div className="absolute -top-4 -left-4 bg-primary text-primary-foreground p-4 rounded-xl shadow-card">
-              <div className="text-center">
-                <div className="text-2xl font-bold">500+</div>
-                <div className="text-sm">Pacientes</div>
-                <div className="text-xs">Transformados</div>
-              </div>
             </div>
           </div>
         </div>
