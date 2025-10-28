@@ -45,8 +45,8 @@ const Navigation = () => {
             onClick={toggleLanguage}
             className="text-white/90 hover:text-white hover:bg-white/10 gap-2 flex-shrink-0 px-3 sm:px-4"
           >
-            <Languages size={18} />
-            <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{language === 'es' ? 'Inglés' : 'Español'}</span>
+            <span className="text-base sm:text-lg">{language === 'es' ? '🇺🇸' : '🇪🇸'}</span>
+            <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{language === 'es' ? 'English' : 'Español'}</span>
           </Button>
         </div>
       </div>
