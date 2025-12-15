@@ -5,6 +5,7 @@ import { ArrowRight, Star, Clock } from "lucide-react";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import { useLanguage } from "@/contexts/LanguageContext";
 const ClinicalCases = () => {
+  const { t } = useLanguage();
   const cases = [{
     id: 1,
     title: "Diseño de Sonrisa Completo",
