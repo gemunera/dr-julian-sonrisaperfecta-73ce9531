@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { Shield, Heart, Microscope, Users, CheckCircle, AlertTriangle, Stethoscope } from "lucide-react";
+import { openWhatsApp } from "@/lib/social-links";
 import beforeAfterPeriodontics from "@/assets/before-after-periodontics.jpg";
 const Periodoncia = () => {
   const treatments = [{
@@ -55,7 +56,7 @@ const Periodoncia = () => {
                 tratar enfermedades de las encías, preservando tu salud oral integral.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2" onClick={() => openWhatsApp('Hola, me interesa una Evaluación Periodontal')}>
                   <Heart className="w-5 h-5" />
                   Evaluación Periodontal
                 </Button>
@@ -145,7 +146,7 @@ const Periodoncia = () => {
                 *Los resultados pueden variar según cada caso individual. 
                 Las imágenes mostradas corresponden a casos reales tratados por el Dr. Palacios.
               </p>
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2" onClick={() => window.location.href = '/casos-clinicos'}>
                 <Heart className="w-5 h-5" />
                 Ver Más Casos Clínicos
               </Button>

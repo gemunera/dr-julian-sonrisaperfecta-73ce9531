@@ -11,6 +11,7 @@ import {
   CheckCircle,
   ArrowRight
 } from "lucide-react";
+import { openWhatsApp } from "@/lib/social-links";
 
 // Import images
 import beforeAfterSmileDesign from "@/assets/before-after-smile-design.jpg";
@@ -157,7 +158,7 @@ const Services = () => {
                       <Button 
                         variant={service.popular ? "default" : "outline"} 
                         className="flex-1 gap-2 group-hover:scale-105 transition-transform"
-                        onClick={() => {}}
+                        onClick={() => openWhatsApp(`Hola, me interesa consultar sobre ${service.title}`)}
                       >
                         Consultar sobre {service.title}
                         <ArrowRight size={16} />
@@ -184,11 +185,11 @@ const Services = () => {
               perfecto para tus necesidades y objetivos estéticos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2" onClick={() => {}}>
+              <Button size="lg" className="gap-2" onClick={() => openWhatsApp()}>
                 Agendar Consulta Gratuita
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="outline" size="lg" onClick={() => {}}>
+              <Button variant="outline" size="lg" onClick={() => window.location.href = '/casos-clinicos'}>
                 Ver Casos Clínicos
               </Button>
             </div>

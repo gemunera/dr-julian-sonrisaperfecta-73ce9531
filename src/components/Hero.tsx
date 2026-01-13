@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
+import { openInstagram, openFacebook, openWhatsApp } from "@/lib/social-links";
 import drPalaciosHeroBg from "@/assets/dr-palacios-hero-bg.png";
 import drPalaciosLogoName from "@/assets/dr-palacios-logo-name.png";
 import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
@@ -44,7 +45,7 @@ const Hero = () => {
 
         {/* CTA Button */}
         <div className="mb-6">
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3 gap-2 shadow-professional" onClick={() => {}}>
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-3 gap-2 shadow-professional" onClick={() => openWhatsApp()}>
             <Calendar size={20} />
             {t('hero.cta')}
           </Button>
@@ -52,13 +53,13 @@ const Hero = () => {
 
         {/* Social Media */}
         <div className="flex justify-center items-center space-x-4">
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white" onClick={openFacebook}>
             <Facebook size={20} />
           </Button>
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white" onClick={() => window.location.href = 'mailto:julianpalaciosgaviria05@gmail.com'}>
             <Mail size={20} />
           </Button>
-          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white">
+          <Button size="sm" variant="outline" className="rounded-full w-12 h-12 p-0 bg-white/10 border-white/20 hover:bg-white/20 text-white" onClick={openInstagram}>
             <Instagram size={20} />
           </Button>
           

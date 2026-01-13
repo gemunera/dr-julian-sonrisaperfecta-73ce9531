@@ -1,9 +1,11 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Clock, Sparkles, CheckCircle, Star, Heart } from "lucide-react";
+import { openWhatsApp } from "@/lib/social-links";
 
 const Carillas = () => {
   const advantages = [
@@ -49,11 +51,11 @@ const Carillas = () => {
                 carillas de alta calidad. Resultados inmediatos y naturales que duran años.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2" onClick={() => openWhatsApp('Hola, me interesa una Consulta Especializada sobre Carillas')}>
                   <Star className="w-5 h-5" />
                   Consulta Especializada
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2">
+                <Button variant="outline" size="lg" className="gap-2" onClick={() => window.location.href = '/casos-clinicos'}>
                   <Sparkles className="w-5 h-5" />
                   Ver Transformaciones
                 </Button>
@@ -126,6 +128,7 @@ const Carillas = () => {
                     <Button 
                       className="w-full mt-6" 
                       variant={type.popular ? "default" : "outline"}
+                      onClick={() => openWhatsApp(`Hola, me interesa más información sobre ${type.title}`)}
                     >
                       Más Información
                     </Button>
@@ -147,11 +150,11 @@ const Carillas = () => {
               Agenda tu evaluación y descubre qué tipo de carilla es ideal para ti.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="gap-2">
+              <Button size="lg" variant="secondary" className="gap-2" onClick={() => openWhatsApp('Hola, quiero agendar una Evaluación Gratuita para Carillas')}>
                 <Clock className="w-5 h-5" />
                 Evaluación Gratuita
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary" onClick={() => window.location.href = '/casos-clinicos'}>
                 <Heart className="w-5 h-5" />
                 Casos de Éxito
               </Button>
@@ -161,6 +164,7 @@ const Carillas = () => {
       </main>
       
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
