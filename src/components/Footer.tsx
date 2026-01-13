@@ -17,10 +17,10 @@ const Footer = () => {
               {t('footer.description')}
             </p>
             <div className="flex space-x-3">
-              <Button size="sm" variant="secondary" className="p-2">
+              <Button size="sm" variant="secondary" className="p-2" onClick={() => window.open('https://instagram.com/dr.julianpalacios', '_blank')}>
                 <Instagram size={18} />
               </Button>
-              <Button size="sm" variant="secondary" className="p-2">
+              <Button size="sm" variant="secondary" className="p-2" onClick={() => window.open('https://www.facebook.com/share/1DbZ9ztDej/?mibextid=wwXIfr', '_blank')}>
                 <Facebook size={18} />
               </Button>
               
