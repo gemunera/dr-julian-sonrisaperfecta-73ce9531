@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Wrench, Clock, Shield, Star, CheckCircle, Users, Heart, Zap } from "lucide-react";
+import { openWhatsApp } from "@/lib/social-links";
 
 const Implantologia = () => {
   const benefits = [
@@ -100,11 +101,11 @@ const Implantologia = () => {
                 con materiales de primera calidad para resultados duraderos.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2" onClick={() => openWhatsApp('Hola, me interesa una Evaluación 3D Gratuita para implantes')}>
                   <Star className="w-5 h-5" />
                   Evaluación 3D Gratuita
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2">
+                <Button variant="outline" size="lg" className="gap-2" onClick={() => window.location.href = '/casos-clinicos'}>
                   <Users className="w-5 h-5" />
                   Casos Exitosos
                 </Button>
@@ -203,7 +204,7 @@ const Implantologia = () => {
                       <Clock className="w-5 h-5 text-blue-500 flex-shrink-0" />
                       <span className="text-sm"><strong>Recuperación:</strong> {type.recovery}</span>
                     </div>
-                    <Button className="w-full mt-4">
+                    <Button className="w-full mt-4" onClick={() => openWhatsApp(`Hola, me interesa más información sobre ${type.title}`)}>
                       Más Información
                     </Button>
                   </CardContent>
@@ -225,11 +226,11 @@ const Implantologia = () => {
               descubre si eres candidato para implantes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="gap-2">
+              <Button size="lg" variant="secondary" className="gap-2" onClick={() => openWhatsApp('Hola, quiero agendar una Evaluación 3D Gratis para implantes')}>
                 <Wrench className="w-5 h-5" />
                 Evaluación 3D Gratis
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary" onClick={() => openWhatsApp('Hola, me interesa información sobre el Plan de Financiamiento para implantes')}>
                 <Star className="w-5 h-5" />
                 Plan de Financiamiento
               </Button>

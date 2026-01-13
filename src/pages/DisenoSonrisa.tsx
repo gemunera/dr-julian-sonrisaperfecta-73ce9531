@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Smile, Star, Sparkles, Clock, CheckCircle, Heart, Award } from "lucide-react";
+import { openWhatsApp } from "@/lib/social-links";
 import beforeAfterSmileDesign from "@/assets/before-after-smile-design.jpg";
 import beforeAfterVeneers from "@/assets/before-after-veneers.jpg";
 import beforeAfterImplants from "@/assets/before-after-implants.jpg";
@@ -65,7 +66,7 @@ const DisenoSonrisa = () => {
                 para crear la sonrisa perfecta que siempre soñaste.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gap-2">
+                <Button size="lg" className="gap-2" onClick={() => openWhatsApp('Hola, me interesa una consulta sobre Diseño de Sonrisa')}>
                   <Heart className="w-5 h-5" />
                   Agenda tu Consulta
                 </Button>
@@ -120,7 +121,7 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="text-center mt-12">
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="gap-2" onClick={() => window.location.href = '/casos-clinicos'}>
                 <Award className="w-5 h-5" />
                 Ver Más Casos Clínicos
               </Button>
@@ -138,11 +139,11 @@ const DisenoSonrisa = () => {
               Agenda tu consulta gratuita y descubre cómo podemos transformar tu sonrisa
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="gap-2">
+              <Button size="lg" variant="secondary" className="gap-2" onClick={() => openWhatsApp('Hola, quiero agendar una consulta gratuita sobre Diseño de Sonrisa')}>
                 <Clock className="w-5 h-5" />
                 Agendar Consulta Gratis
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary">
+              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary" onClick={() => document.getElementById('testimonios')?.scrollIntoView({ behavior: 'smooth' })}>
                 <Star className="w-5 h-5" />
                 Ver Testimonios
               </Button>
