@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, MessageCircle, Instagram, Facebook, Linkedin, Mail, MapPin } from "lucide-react";
-import drPalaciosProcedure from "@/assets/dr-palacios-procedure.jpg";
+import drPalaciosHeroBg from "@/assets/dr-palacios-hero-bg.png";
 import drPalaciosLogoName from "@/assets/dr-palacios-logo-name.png";
 import drPalaciosLogoSide from "@/assets/dr-palacios-logo-side.png";
 import julianPalaciosGeneratedLogo from "@/assets/julian-palacios-generated-logo.png";
@@ -14,7 +14,7 @@ const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={drPalaciosProcedure} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover object-[50%_20%] sm:object-[50%_25%] md:object-[50%_30%] lg:object-[50%_35%]" />
+        <img src={drPalaciosHeroBg} alt="Dr. Julián Palacios realizando procedimiento dental" className="w-full h-full object-cover object-[50%_20%] sm:object-[50%_25%] md:object-[50%_30%] lg:object-[50%_35%]" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
       </div>
 
