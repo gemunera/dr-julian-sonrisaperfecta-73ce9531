@@ -14,7 +14,7 @@ const WhatsAppIcon = () => (
 const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "573167580565"; // Número del Dr. Palacios
-    const message = "👋 ¡Hola! Gracias por comunicarte con la clínica del Dr. Julián Palacios.\n\nPor favor cuéntanos, ¿qué información deseas recibir sobre nuestros servicios de periodoncia, diseño de sonrisa, carillas dentales o implantología?\n\nEstaremos felices de atenderte.\n+57 316 7580565";
+    const message = "¡Hola! Gracias por comunicarte con la clínica del Dr. Julián Palacios.\n\nPor favor cuéntanos, ¿qué información deseas recibir sobre nuestros servicios de periodoncia, diseño de sonrisa, carillas dentales o implantología?";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
