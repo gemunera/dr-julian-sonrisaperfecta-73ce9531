@@ -25,7 +25,7 @@ const Contact = () => {
             variant="outline"
             size="lg"
             className="flex items-center gap-3 hover:bg-blue-50 hover:border-blue-500 hover:text-blue-600"
-            onClick={() => window.open('https://facebook.com', '_blank')}
+            onClick={() => window.open('https://www.facebook.com/share/1DbZ9ztDej/?mibextid=wwXIfr', '_blank')}
           >
             <Facebook className="w-5 h-5" />
             Facebook
@@ -45,7 +45,7 @@ const Contact = () => {
             variant="outline"
             size="lg"
             className="flex items-center gap-3 hover:bg-pink-50 hover:border-pink-500 hover:text-pink-600"
-            onClick={() => window.open('https://instagram.com', '_blank')}
+            onClick={() => window.open('https://instagram.com/dr.julianpalacios', '_blank')}
           >
             <Instagram className="w-5 h-5" />
             Instagram
