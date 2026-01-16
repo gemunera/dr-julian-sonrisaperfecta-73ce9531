@@ -6,78 +6,89 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Wrench, Clock, Shield, Star, CheckCircle, Users, Heart, Zap } from "lucide-react";
 import { openWhatsApp } from "@/lib/social-links";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Implantologia = () => {
+  const { t, language } = useLanguage();
+
   const benefits = [
     {
       icon: Shield,
-      title: "Durabilidad",
-      description: "Los implantes pueden durar toda la vida con el cuidado adecuado"
+      title: t('implantologyPage.benefits.durability.title'),
+      description: t('implantologyPage.benefits.durability.description')
     },
     {
       icon: Heart,
-      title: "Comodidad",
-      description: "Se sienten y funcionan como dientes naturales"
+      title: t('implantologyPage.benefits.comfort.title'),
+      description: t('implantologyPage.benefits.comfort.description')
     },
     {
       icon: Star,
-      title: "Estética",
-      description: "Resultados naturales que mejoran tu sonrisa"
+      title: t('implantologyPage.benefits.aesthetics.title'),
+      description: t('implantologyPage.benefits.aesthetics.description')
     },
     {
       icon: Zap,
-      title: "Funcionalidad",
-      description: "Recupera completamente tu capacidad de masticación"
+      title: t('implantologyPage.benefits.functionality.title'),
+      description: t('implantologyPage.benefits.functionality.description')
     }
   ];
 
   const process = [
     {
       step: 1,
-      title: "Evaluación Inicial",
-      description: "Examen completo, radiografías 3D y planificación digital",
-      duration: "1 hora"
+      title: t('implantologyPage.process.step1.title'),
+      description: t('implantologyPage.process.step1.description'),
+      duration: t('implantologyPage.process.step1.duration')
     },
     {
       step: 2,
-      title: "Cirugía de Implante",
-      description: "Colocación precisa del implante de titanio",
-      duration: "1-2 horas"
+      title: t('implantologyPage.process.step2.title'),
+      description: t('implantologyPage.process.step2.description'),
+      duration: t('implantologyPage.process.step2.duration')
     },
     {
       step: 3,
-      title: "Integración Ósea",
-      description: "Período de cicatrización y osteointegración",
-      duration: "3-6 meses"
+      title: t('implantologyPage.process.step3.title'),
+      description: t('implantologyPage.process.step3.description'),
+      duration: t('implantologyPage.process.step3.duration')
     },
     {
       step: 4,
-      title: "Corona Final",
-      description: "Colocación de la corona personalizada",
-      duration: "2-3 semanas"
+      title: t('implantologyPage.process.step4.title'),
+      description: t('implantologyPage.process.step4.description'),
+      duration: t('implantologyPage.process.step4.duration')
     }
   ];
 
   const types = [
     {
-      title: "Implante Unitario",
-      description: "Reemplazo de un solo diente perdido",
-      ideal: "Pérdida de un diente",
-      recovery: "3-6 meses"
+      title: t('implantologyPage.types.single.title'),
+      description: t('implantologyPage.types.single.description'),
+      ideal: t('implantologyPage.types.single.ideal'),
+      recovery: t('implantologyPage.types.single.recovery')
     },
     {
-      title: "Puente sobre Implantes",
-      description: "Reemplazo de varios dientes consecutivos",
-      ideal: "Pérdida de 2-4 dientes",
-      recovery: "4-6 meses"
+      title: t('implantologyPage.types.bridge.title'),
+      description: t('implantologyPage.types.bridge.description'),
+      ideal: t('implantologyPage.types.bridge.ideal'),
+      recovery: t('implantologyPage.types.bridge.recovery')
     },
     {
-      title: "Prótesis Total",
-      description: "Reemplazo completo de todos los dientes",
-      ideal: "Edentulismo total",
-      recovery: "6-8 meses"
+      title: t('implantologyPage.types.full.title'),
+      description: t('implantologyPage.types.full.description'),
+      ideal: t('implantologyPage.types.full.ideal'),
+      recovery: t('implantologyPage.types.full.recovery')
     }
   ];
+
+  const whatsappMessage3D = language === 'es'
+    ? 'Hola, me interesa una Evaluación 3D Gratuita para implantes'
+    : 'Hello, I am interested in a Free 3D Evaluation for implants';
+
+  const whatsappMessageFinancing = language === 'es'
+    ? 'Hola, me interesa información sobre el Plan de Financiamiento para implantes'
+    : 'Hello, I am interested in information about the Financing Plan for implants';
 
   return (
     <div className="min-h-screen bg-background">
@@ -90,24 +101,22 @@ const Implantologia = () => {
             <div className="text-center max-w-4xl mx-auto">
               <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
                 <Wrench className="w-4 h-4 mr-2" />
-                Solución Definitiva
+                {t('implantologyPage.badge')}
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-                Implantología
+                {t('implantologyPage.title')}
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Recupera la funcionalidad completa de tu boca con implantes dentales de 
-                última generación. El Dr. Palacios combina técnica quirúrgica avanzada 
-                con materiales de primera calidad para resultados duraderos.
+                {t('implantologyPage.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gap-2" onClick={() => openWhatsApp('Hola, me interesa una Evaluación 3D Gratuita para implantes')}>
+                <Button size="lg" className="gap-2" onClick={() => openWhatsApp(whatsappMessage3D)}>
                   <Star className="w-5 h-5" />
-                  Evaluación 3D Gratuita
+                  {t('implantologyPage.evaluation3D')}
                 </Button>
                 <Button variant="outline" size="lg" className="gap-2" onClick={() => window.location.href = '/casos-clinicos'}>
                   <Users className="w-5 h-5" />
-                  Casos Exitosos
+                  {t('implantologyPage.successCases')}
                 </Button>
               </div>
             </div>
@@ -119,10 +128,10 @@ const Implantologia = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Beneficios de los Implantes Dentales
+                {t('implantologyPage.benefitsTitle')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                La mejor solución para reemplazar dientes perdidos de forma permanente
+                {t('implantologyPage.benefitsSubtitle')}
               </p>
             </div>
             
@@ -147,10 +156,10 @@ const Implantologia = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Proceso de Implantación
+                {t('implantologyPage.processTitle')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Un procedimiento planificado paso a paso para garantizar el éxito
+                {t('implantologyPage.processSubtitle')}
               </p>
             </div>
             
@@ -181,10 +190,10 @@ const Implantologia = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Tipos de Implantes
+                {t('implantologyPage.typesTitle')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Soluciones personalizadas según tus necesidades específicas
+                {t('implantologyPage.typesSubtitle')}
               </p>
             </div>
             
@@ -198,14 +207,14 @@ const Implantologia = () => {
                   <CardContent className="space-y-4">
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm"><strong>Ideal para:</strong> {type.ideal}</span>
+                      <span className="text-sm"><strong>{t('implantologyPage.idealFor')}:</strong> {type.ideal}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                      <span className="text-sm"><strong>Recuperación:</strong> {type.recovery}</span>
+                      <span className="text-sm"><strong>{t('implantologyPage.recovery')}:</strong> {type.recovery}</span>
                     </div>
-                    <Button className="w-full mt-4" onClick={() => openWhatsApp(`Hola, me interesa más información sobre ${type.title}`)}>
-                      Más Información
+                    <Button className="w-full mt-4" onClick={() => openWhatsApp(language === 'es' ? `Hola, me interesa más información sobre ${type.title}` : `Hello, I am interested in more information about ${type.title}`)}>
+                      {t('implantologyPage.moreInfo')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -218,21 +227,19 @@ const Implantologia = () => {
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Recupera tu Sonrisa Completa
+              {t('implantologyPage.recoverSmile')}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Los implantes dentales son la solución más avanzada y duradera para 
-              reemplazar dientes perdidos. Agenda tu evaluación 3D gratuita y 
-              descubre si eres candidato para implantes.
+              {t('implantologyPage.recoverSmileDesc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="gap-2" onClick={() => openWhatsApp('Hola, quiero agendar una Evaluación 3D Gratis para implantes')}>
+              <Button size="lg" variant="secondary" className="gap-2" onClick={() => openWhatsApp(whatsappMessage3D)}>
                 <Wrench className="w-5 h-5" />
-                Evaluación 3D Gratis
+                {t('implantologyPage.evaluation3DFree')}
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary" onClick={() => openWhatsApp('Hola, me interesa información sobre el Plan de Financiamiento para implantes')}>
+              <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary" onClick={() => openWhatsApp(whatsappMessageFinancing)}>
                 <Star className="w-5 h-5" />
-                Plan de Financiamiento
+                {t('implantologyPage.financingPlan')}
               </Button>
             </div>
           </div>

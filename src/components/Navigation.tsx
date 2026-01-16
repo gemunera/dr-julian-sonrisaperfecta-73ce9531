@@ -11,7 +11,7 @@ const Navigation = () => {
     name: t('nav.home'),
     href: "/"
   }, {
-    name: "Dr. Julián Palacios",
+    name: t('nav.doctor'),
     href: "/doctor"
   }, {
     name: t('nav.smileDesign'),

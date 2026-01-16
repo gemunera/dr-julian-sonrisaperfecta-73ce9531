@@ -7,36 +7,45 @@ import { Badge } from "@/components/ui/badge";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { Shield, Heart, Microscope, Users, CheckCircle, AlertTriangle, Stethoscope } from "lucide-react";
 import { openWhatsApp } from "@/lib/social-links";
+import { useLanguage } from "@/contexts/LanguageContext";
 import beforeAfterPeriodontics from "@/assets/before-after-periodontics.jpg";
+
 const Periodoncia = () => {
+  const { t, language } = useLanguage();
+
   const treatments = [{
-    title: "Limpieza Profunda",
-    description: "Eliminación de sarro y placa bacteriana por debajo de la línea de las encías",
+    title: t('periodonticsPage.treatment1.title'),
+    description: t('periodonticsPage.treatment1.description'),
     icon: Microscope,
-    benefits: ["Elimina infecciones", "Previene pérdida ósea", "Mejora halitosis"]
+    benefits: (t('periodonticsPage.treatment1.benefits') as unknown as string[])
   }, {
-    title: "Cirugía Periodontal",
-    description: "Tratamiento avanzado para casos severos de enfermedad periodontal",
+    title: t('periodonticsPage.treatment2.title'),
+    description: t('periodonticsPage.treatment2.description'),
     icon: Stethoscope,
-    benefits: ["Regeneración tisular", "Preserva dientes", "Resultados duraderos"]
+    benefits: (t('periodonticsPage.treatment2.benefits') as unknown as string[])
   }, {
-    title: "Mantenimiento",
-    description: "Cuidado preventivo continuo para mantener la salud de las encías",
+    title: t('periodonticsPage.treatment3.title'),
+    description: t('periodonticsPage.treatment3.description'),
     icon: Heart,
-    benefits: ["Prevención efectiva", "Detección temprana", "Sonrisa saludable"]
+    benefits: (t('periodonticsPage.treatment3.benefits') as unknown as string[])
   }];
 
   const clinicalCases = [
     {
-      title: "Regeneración Periodontal",
-      category: "Tratamiento Avanzado",
+      title: t('periodonticsPage.clinicalCase.title'),
+      category: t('periodonticsPage.clinicalCase.category'),
       beforeImage: beforeAfterPeriodontics,
       afterImage: beforeAfterPeriodontics
     }
   ];
 
-  const symptoms = ["Encías rojas o inflamadas", "Sangrado al cepillarse", "Mal aliento persistente", "Retracción de encías", "Dientes flojos o móviles", "Dolor al masticar"];
-  const prevention = ["Cepillado correcto 2 veces al día", "Uso diario de hilo dental", "Enjuague bucal antibacteriano", "Visitas regulares al periodoncista", "Evitar el tabaco", "Dieta balanceada"];
+  const symptoms = t('periodonticsPage.symptoms') as unknown as string[];
+  const prevention = t('periodonticsPage.prevention') as unknown as string[];
+
+  const whatsappMessage = language === 'es'
+    ? 'Hola, me interesa una Evaluación Periodontal'
+    : 'Hello, I am interested in a Periodontal Evaluation';
+
   return <div className="min-h-screen bg-background">
       <Navigation />
       
@@ -47,20 +56,17 @@ const Periodoncia = () => {
             <div className="text-center max-w-4xl mx-auto">
               <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200">
                 <Shield className="w-4 h-4 mr-2" />
-                Especialidad del Dr. Palacios
+                {t('periodonticsPage.badge')}
               </Badge>
               
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                La base de una sonrisa saludable está en encías sanas. Como especialista en 
-                periodoncia, el Dr. Palacios ofrece tratamientos avanzados para prevenir y 
-                tratar enfermedades de las encías, preservando tu salud oral integral.
+                {t('periodonticsPage.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gap-2" onClick={() => openWhatsApp('Hola, me interesa una Evaluación Periodontal')}>
+                <Button size="lg" className="gap-2" onClick={() => openWhatsApp(whatsappMessage)}>
                   <Heart className="w-5 h-5" />
-                  Evaluación Periodontal
+                  {t('periodonticsPage.evaluation')}
                 </Button>
-                
               </div>
             </div>
           </div>
@@ -72,20 +78,20 @@ const Periodoncia = () => {
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-blue-100 text-blue-800">
                 <Heart className="w-4 h-4 mr-2" />
-                Tratamientos Especializados
+                {t('periodonticsPage.treatments')}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Soluciones Periodontales Integrales
+                {t('periodonticsPage.comprehensiveSolutions')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Tratamientos personalizados para cada etapa de la enfermedad periodontal, 
-                utilizando tecnología de vanguardia y técnicas mínimamente invasivas.
+                {t('periodonticsPage.comprehensiveSolutionsDesc')}
               </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {treatments.map((treatment, index) => {
                 const IconComponent = treatment.icon;
+                const benefits = Array.isArray(treatment.benefits) ? treatment.benefits : [];
                 return (
                   <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
                     <CardHeader className="text-center">
@@ -97,7 +103,7 @@ const Periodoncia = () => {
                     </CardHeader>
                     <CardContent>
                       <ul className="space-y-2">
-                        {treatment.benefits.map((benefit, benefitIndex) => (
+                        {benefits.map((benefit, benefitIndex) => (
                           <li key={benefitIndex} className="flex items-center gap-2">
                             <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                             <span className="text-sm">{benefit}</span>
@@ -118,14 +124,13 @@ const Periodoncia = () => {
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-green-100 text-green-800">
                 <Users className="w-4 h-4 mr-2" />
-                Casos Reales
+                {t('periodonticsPage.realCases')}
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Transformaciones Periodontales
+                {t('periodonticsPage.transformations')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Resultados reales de nuestros pacientes que han recuperado la salud 
-                de sus encías y la estabilidad de sus dientes con nuestros tratamientos especializados.
+                {t('periodonticsPage.transformationsDesc')}
               </p>
             </div>
             
@@ -143,12 +148,11 @@ const Periodoncia = () => {
             
             <div className="text-center mt-12">
               <p className="text-sm text-muted-foreground mb-6 max-w-2xl mx-auto">
-                *Los resultados pueden variar según cada caso individual. 
-                Las imágenes mostradas corresponden a casos reales tratados por el Dr. Palacios.
+                {t('periodonticsPage.disclaimer')}
               </p>
               <Button size="lg" className="gap-2" onClick={() => window.location.href = '/casos-clinicos'}>
                 <Heart className="w-5 h-5" />
-                Ver Más Casos Clínicos
+                {t('periodonticsPage.viewMoreCases')}
               </Button>
             </div>
           </div>
@@ -161,17 +165,16 @@ const Periodoncia = () => {
               <div>
                 <Badge className="mb-4 bg-amber-100 text-amber-800">
                   <AlertTriangle className="w-4 h-4 mr-2" />
-                  Señales de Alerta
+                  {t('periodonticsPage.warningSignsBadge')}
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                  ¿Cuándo consultar al periodoncista?
+                  {t('periodonticsPage.warningSignsTitle')}
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  La detección temprana es clave para prevenir la pérdida dental. 
-                  Si presentas alguno de estos síntomas, agenda una cita inmediatamente.
+                  {t('periodonticsPage.warningSignsDesc')}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {symptoms.map((symptom, index) => <div key={index} className="flex items-center gap-2">
+                  {(Array.isArray(symptoms) ? symptoms : []).map((symptom, index) => <div key={index} className="flex items-center gap-2">
                       <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0" />
                       <span className="text-sm">{symptom}</span>
                     </div>)}
@@ -180,14 +183,14 @@ const Periodoncia = () => {
               
               <Card className="p-6">
                 <CardHeader>
-                  <CardTitle className="text-xl text-center">Prevención Efectiva</CardTitle>
+                  <CardTitle className="text-xl text-center">{t('periodonticsPage.preventionTitle')}</CardTitle>
                   <p className="text-muted-foreground text-center">
-                    Mantén tus encías saludables con estos hábitos esenciales
+                    {t('periodonticsPage.preventionDesc')}
                   </p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {prevention.map((tip, index) => <li key={index} className="flex items-center gap-2">
+                    {(Array.isArray(prevention) ? prevention : []).map((tip, index) => <li key={index} className="flex items-center gap-2">
                         <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                         <span className="text-sm">{tip}</span>
                       </li>)}
@@ -197,13 +200,11 @@ const Periodoncia = () => {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        
       </main>
       
       <Footer />
       <WhatsAppFloat />
     </div>;
 };
+
 export default Periodoncia;
