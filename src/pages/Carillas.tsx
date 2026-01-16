@@ -6,29 +6,59 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Clock, Sparkles, CheckCircle, Star, Heart } from "lucide-react";
 import { openWhatsApp } from "@/lib/social-links";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Carillas = () => {
+  const { t, language } = useLanguage();
+
   const advantages = [
-    { icon: Shield, title: "Resistencia Superior", description: "Material cerámico de alta calidad que resiste el desgaste diario" },
-    { icon: Sparkles, title: "Estética Natural", description: "Resultados que imitan perfectamente el esmalte dental natural" },
-    { icon: Clock, title: "Procedimiento Rápido", description: "Resultados visibles en pocas sesiones" },
-    { icon: Heart, title: "Mínimamente Invasivo", description: "Preservamos la mayor cantidad de estructura dental" }
+    { 
+      icon: Shield, 
+      title: t('veneersPage.advantages.resistance.title'), 
+      description: t('veneersPage.advantages.resistance.description') 
+    },
+    { 
+      icon: Sparkles, 
+      title: t('veneersPage.advantages.aesthetics.title'), 
+      description: t('veneersPage.advantages.aesthetics.description') 
+    },
+    { 
+      icon: Clock, 
+      title: t('veneersPage.advantages.fast.title'), 
+      description: t('veneersPage.advantages.fast.description') 
+    },
+    { 
+      icon: Heart, 
+      title: t('veneersPage.advantages.minimal.title'), 
+      description: t('veneersPage.advantages.minimal.description') 
+    }
   ];
+
+  const porcelainFeatures = t('veneersPage.types.porcelain.features') as unknown as string[];
+  const compositeFeatures = t('veneersPage.types.composite.features') as unknown as string[];
 
   const types = [
     {
-      title: "Carillas de Porcelana",
-      description: "La opción premium para resultados duraderos y naturales",
-      features: ["Duración: 15-20 años", "Resistencia superior", "Color estable", "Biocompatible"],
+      title: t('veneersPage.types.porcelain.title'),
+      description: t('veneersPage.types.porcelain.description'),
+      features: Array.isArray(porcelainFeatures) ? porcelainFeatures : [],
       popular: true
     },
     {
-      title: "Carillas de Composite",
-      description: "Solución rápida y económica para mejoras inmediatas",
-      features: ["Duración: 5-8 años", "Aplicación directa", "Reparable", "Más económica"],
+      title: t('veneersPage.types.composite.title'),
+      description: t('veneersPage.types.composite.description'),
+      features: Array.isArray(compositeFeatures) ? compositeFeatures : [],
       popular: false
     }
   ];
+
+  const whatsappMessageConsult = language === 'es'
+    ? 'Hola, me interesa una Consulta Especializada sobre Carillas'
+    : 'Hello, I am interested in a Specialized Consultation about Veneers';
+
+  const whatsappMessageFree = language === 'es'
+    ? 'Hola, quiero agendar una Evaluación Gratuita para Carillas'
+    : 'Hello, I want to schedule a Free Evaluation for Veneers';
 
   return (
     <div className="min-h-screen bg-background">
@@ -41,23 +71,22 @@ const Carillas = () => {
             <div className="text-center max-w-4xl mx-auto">
               <Badge className="mb-4 bg-secondary/10 text-secondary hover:bg-secondary/20">
                 <Shield className="w-4 h-4 mr-2" />
-                Tecnología Avanzada
+                {t('veneersPage.badge')}
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-                Carillas Dentales
+                {t('veneersPage.title')}
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Transforma dientes manchados, astillados o desalineados con nuestras 
-                carillas de alta calidad. Resultados inmediatos y naturales que duran años.
+                {t('veneersPage.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="gap-2" onClick={() => openWhatsApp('Hola, me interesa una Consulta Especializada sobre Carillas')}>
+                <Button size="lg" className="gap-2" onClick={() => openWhatsApp(whatsappMessageConsult)}>
                   <Star className="w-5 h-5" />
-                  Consulta Especializada
+                  {t('veneersPage.specializedConsult')}
                 </Button>
                 <Button variant="outline" size="lg" className="gap-2" onClick={() => window.location.href = '/casos-clinicos'}>
                   <Sparkles className="w-5 h-5" />
-                  Ver Transformaciones
+                  {t('veneersPage.viewTransformations')}
                 </Button>
               </div>
             </div>
@@ -69,10 +98,10 @@ const Carillas = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Ventajas de las Carillas Dentales
+                {t('veneersPage.advantagesTitle')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Solución integral para múltiples problemas estéticos dentales
+                {t('veneersPage.advantagesSubtitle')}
               </p>
             </div>
             
@@ -97,10 +126,10 @@ const Carillas = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                Tipos de Carillas
+                {t('veneersPage.typesTitle')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Elige la opción que mejor se adapte a tus necesidades y presupuesto
+                {t('veneersPage.typesSubtitle')}
               </p>
             </div>
             
@@ -109,7 +138,7 @@ const Carillas = () => {
                 <Card key={index} className={`relative p-6 ${type.popular ? 'border-primary shadow-lg' : ''}`}>
                   {type.popular && (
                     <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
-                      Más Popular
+                      {t('veneersPage.mostPopular')}
                     </Badge>
                   )}
                   <CardHeader className="text-center">
@@ -128,9 +157,9 @@ const Carillas = () => {
                     <Button 
                       className="w-full mt-6" 
                       variant={type.popular ? "default" : "outline"}
-                      onClick={() => openWhatsApp(`Hola, me interesa más información sobre ${type.title}`)}
+                      onClick={() => openWhatsApp(language === 'es' ? `Hola, me interesa más información sobre ${type.title}` : `Hello, I am interested in more information about ${type.title}`)}
                     >
-                      Más Información
+                      {t('veneersPage.moreInfo')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -143,20 +172,19 @@ const Carillas = () => {
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Sonríe con Confianza
+              {t('veneersPage.smileWithConfidence')}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Las carillas dentales son la solución perfecta para una sonrisa impecable. 
-              Agenda tu evaluación y descubre qué tipo de carilla es ideal para ti.
+              {t('veneersPage.smileWithConfidenceDesc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="gap-2" onClick={() => openWhatsApp('Hola, quiero agendar una Evaluación Gratuita para Carillas')}>
+              <Button size="lg" variant="secondary" className="gap-2" onClick={() => openWhatsApp(whatsappMessageFree)}>
                 <Clock className="w-5 h-5" />
-                Evaluación Gratuita
+                {t('veneersPage.freeEvaluation')}
               </Button>
               <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white hover:text-primary" onClick={() => window.location.href = '/casos-clinicos'}>
                 <Heart className="w-5 h-5" />
-                Casos de Éxito
+                {t('veneersPage.successCases')}
               </Button>
             </div>
           </div>

@@ -90,7 +90,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Hours */}
+        {/* Hours */}
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer.schedule')}</h4>
             <div className="space-y-2">
@@ -99,12 +99,12 @@ const Footer = () => {
                 <span>{t('footer.scheduleTime').split(':')[1]?.trim()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-primary-foreground/80">Sábados:</span>
+                <span className="text-primary-foreground/80">{t('footer.saturdays')}:</span>
                 <span>8:00 AM - 2:00 PM</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-primary-foreground/80">Domingos:</span>
-                <span>Cerrado</span>
+                <span className="text-primary-foreground/80">{t('footer.sundays')}:</span>
+                <span>{t('footer.closed')}</span>
               </div>
             </div>
             <div className="mt-6">
@@ -121,7 +121,7 @@ const Footer = () => {
                 © 2024 Dr. Julián Palacios. {t('footer.rights')}
               </p>
               <p className="text-primary-foreground/60 text-xs mt-1">
-                Especialista en Periodoncia - Universidad del Valle
+                {t('footer.specialist')}
               </p>
             </div>
             
