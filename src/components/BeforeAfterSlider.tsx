@@ -9,77 +9,53 @@ interface BeforeAfterSliderProps {
   category: string;
   description?: string;
 }
-
-const BeforeAfterSlider = ({ beforeImage, afterImage, title, category, description }: BeforeAfterSliderProps) => {
-  const { t } = useLanguage();
+const BeforeAfterSlider = ({
+  beforeImage,
+  afterImage,
+  title,
+  category,
+  description
+}: BeforeAfterSliderProps) => {
+  const {
+    t
+  } = useLanguage();
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
-  
   const defaultDescription = t('cases.defaultDisclaimer');
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging) return;
-    
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    const percentage = (x / rect.width) * 100;
+    const percentage = x / rect.width * 100;
     setSliderPosition(Math.max(0, Math.min(100, percentage)));
   };
-
   const handleMouseDown = () => setIsDragging(true);
   const handleMouseUp = () => setIsDragging(false);
-
-  return (
-    <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+  return <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
       <CardContent className="p-0">
         <div className="relative aspect-[4/3] overflow-hidden">
-          <Badge className="absolute top-4 left-4 z-10 bg-primary/90 text-primary-foreground">
-            {category}
-          </Badge>
           
-          <div 
-            className="relative w-full h-full cursor-col-resize select-none"
-            onMouseMove={handleMouseMove}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-          >
+          
+          <div className="relative w-full h-full cursor-col-resize select-none" onMouseMove={handleMouseMove} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp}>
             {/* After Image */}
-            <img 
-              src={afterImage} 
-              alt={`Después - ${title}`}
-              className="absolute inset-0 w-full h-full object-cover"
-              draggable={false}
-            />
+            <img src={afterImage} alt={`Después - ${title}`} className="absolute inset-0 w-full h-full object-cover" draggable={false} />
             
             {/* Before Image with smooth transition */}
-            <div 
-              className="absolute inset-0 w-full h-full overflow-hidden"
-              style={{
-                width: `${sliderPosition}%`,
-                transition: isDragging ? 'none' : 'width 0.1s ease-out'
-              }}
-            >
-              <img 
-                src={beforeImage} 
-                alt={`Antes - ${title}`}
-                className="w-full h-full object-cover"
-                style={{
-                  width: `${100 * (100 / sliderPosition)}%`,
-                  maxWidth: 'none'
-                }}
-                draggable={false}
-              />
+            <div className="absolute inset-0 w-full h-full overflow-hidden" style={{
+            width: `${sliderPosition}%`,
+            transition: isDragging ? 'none' : 'width 0.1s ease-out'
+          }}>
+              <img src={beforeImage} alt={`Antes - ${title}`} className="w-full h-full object-cover" style={{
+              width: `${100 * (100 / sliderPosition)}%`,
+              maxWidth: 'none'
+            }} draggable={false} />
             </div>
             
             {/* Slider Line */}
-            <div 
-              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-20 cursor-col-resize"
-              style={{ 
-                left: `${sliderPosition}%`,
-                transform: 'translateX(-50%)'
-              }}
-            >
+            <div className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-20 cursor-col-resize" style={{
+            left: `${sliderPosition}%`,
+            transform: 'translateX(-50%)'
+          }}>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
               </div>
@@ -102,8 +78,6 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, category, descripti
           </p>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>;
 };
-
 export default BeforeAfterSlider;
