@@ -6,7 +6,6 @@ import ClinicalCases from "@/components/ClinicalCases";
 import Contact from "@/components/Contact";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
-import SmileDesignShowcase from "@/components/SmileDesignShowcase";
 
 const Index = () => {
   return (
@@ -14,7 +13,6 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <SmileDesignShowcase />
       </main>
       <Footer />
       <WhatsAppFloat />
