@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import SingleImageCard from "@/components/SingleImageCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,29 +11,30 @@ import { openWhatsApp } from "@/lib/social-links";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ceramicSmileBefore from "@/assets/ceramic-smile-before.png";
 import ceramicSmileAfter from "@/assets/ceramic-smile-after.png";
-import beforeAfterVeneers from "@/assets/before-after-veneers.jpg";
+import ceramicLensesSmile from "@/assets/ceramic-lenses-smile.jpg";
 import beforeAfterImplants from "@/assets/before-after-implants.jpg";
 
 const DisenoSonrisa = () => {
   const { t, language } = useLanguage();
 
-  const clinicalCases = [{
+  const beforeAfterCases = [{
     beforeImage: ceramicSmileBefore,
     afterImage: ceramicSmileAfter,
     title: t('cases.ceramicCase.title'),
     category: t('cases.ceramicCase.category'),
     description: t('cases.ceramicCase.description')
   }, {
-    beforeImage: beforeAfterVeneers,
-    afterImage: beforeAfterVeneers,
-    title: t('smileDesignPage.cases.case2.title'),
-    category: t('smileDesignPage.cases.case2.category')
-  }, {
     beforeImage: beforeAfterImplants,
     afterImage: beforeAfterImplants,
     title: t('smileDesignPage.cases.case3.title'),
     category: t('smileDesignPage.cases.case3.category')
   }];
+
+  const singleImageCase = {
+    image: ceramicLensesSmile,
+    title: t('cases.ceramicLenses.title'),
+    description: t('cases.ceramicLenses.description')
+  };
 
   const whatsappMessage = language === 'es' 
     ? 'Hola, me interesa una consulta sobre Diseño de Sonrisa'
@@ -106,7 +108,21 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {clinicalCases.map((caseItem, index) => <BeforeAfterSlider key={index} beforeImage={caseItem.beforeImage} afterImage={caseItem.afterImage} title={caseItem.title} category={caseItem.category} description={caseItem.description} />)}
+              {beforeAfterCases.map((caseItem, index) => (
+                <BeforeAfterSlider 
+                  key={index} 
+                  beforeImage={caseItem.beforeImage} 
+                  afterImage={caseItem.afterImage} 
+                  title={caseItem.title} 
+                  category={caseItem.category} 
+                  description={caseItem.description} 
+                />
+              ))}
+              <SingleImageCard 
+                image={singleImageCase.image}
+                title={singleImageCase.title}
+                description={singleImageCase.description}
+              />
             </div>
             
             <div className="text-center mt-12">
