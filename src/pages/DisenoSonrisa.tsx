@@ -19,9 +19,9 @@ const DisenoSonrisa = () => {
   const clinicalCases = [{
     beforeImage: ceramicSmileBefore,
     afterImage: ceramicSmileAfter,
-    title: t('smileDesignPage.cases.ceramicCase.title'),
-    category: t('smileDesignPage.cases.ceramicCase.category'),
-    description: t('smileDesignPage.cases.ceramicCase.description')
+    title: t('cases.ceramicCase.title'),
+    category: t('cases.ceramicCase.category'),
+    description: t('cases.ceramicCase.description')
   }, {
     beforeImage: beforeAfterVeneers,
     afterImage: beforeAfterVeneers,
