@@ -7,12 +7,15 @@ interface BeforeAfterSliderProps {
   afterImage: string;
   title: string;
   category: string;
+  description?: string;
 }
 
-const BeforeAfterSlider = ({ beforeImage, afterImage, title, category }: BeforeAfterSliderProps) => {
+const BeforeAfterSlider = ({ beforeImage, afterImage, title, category, description }: BeforeAfterSliderProps) => {
   const { t } = useLanguage();
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  
+  const defaultDescription = t('cases.defaultDisclaimer');
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging) return;
@@ -95,7 +98,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, title, category }: BeforeA
         <div className="p-6">
           <h3 className="font-semibold text-lg text-foreground mb-2">{title}</h3>
           <p className="text-muted-foreground text-sm">
-            Resultado real de paciente. Los resultados pueden variar según cada caso individual.
+            {description || defaultDescription}
           </p>
         </div>
       </CardContent>

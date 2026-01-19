@@ -8,7 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Smile, Star, Sparkles, Clock, CheckCircle, Heart, Award } from "lucide-react";
 import { openWhatsApp } from "@/lib/social-links";
 import { useLanguage } from "@/contexts/LanguageContext";
-import beforeAfterSmileDesign from "@/assets/before-after-smile-design.jpg";
+import ceramicSmileBefore from "@/assets/ceramic-smile-before.png";
+import ceramicSmileAfter from "@/assets/ceramic-smile-after.png";
 import beforeAfterVeneers from "@/assets/before-after-veneers.jpg";
 import beforeAfterImplants from "@/assets/before-after-implants.jpg";
 
@@ -16,10 +17,11 @@ const DisenoSonrisa = () => {
   const { t, language } = useLanguage();
 
   const clinicalCases = [{
-    beforeImage: beforeAfterSmileDesign,
-    afterImage: beforeAfterSmileDesign,
-    title: t('smileDesignPage.cases.case1.title'),
-    category: t('smileDesignPage.cases.case1.category')
+    beforeImage: ceramicSmileBefore,
+    afterImage: ceramicSmileAfter,
+    title: t('smileDesignPage.cases.ceramicCase.title'),
+    category: t('smileDesignPage.cases.ceramicCase.category'),
+    description: t('smileDesignPage.cases.ceramicCase.description')
   }, {
     beforeImage: beforeAfterVeneers,
     afterImage: beforeAfterVeneers,
@@ -104,7 +106,7 @@ const DisenoSonrisa = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {clinicalCases.map((caseItem, index) => <BeforeAfterSlider key={index} beforeImage={caseItem.beforeImage} afterImage={caseItem.afterImage} title={caseItem.title} category={caseItem.category} />)}
+              {clinicalCases.map((caseItem, index) => <BeforeAfterSlider key={index} beforeImage={caseItem.beforeImage} afterImage={caseItem.afterImage} title={caseItem.title} category={caseItem.category} description={caseItem.description} />)}
             </div>
             
             <div className="text-center mt-12">
