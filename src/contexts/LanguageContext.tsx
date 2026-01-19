@@ -141,6 +141,12 @@ const translations = {
       nextSuccess: '¿Quieres ser nuestro próximo caso de éxito?',
       nextSuccessDesc: 'Cada paciente es único y merece un tratamiento personalizado. Agenda tu consulta y descubre cómo podemos transformar tu sonrisa.',
       viewMoreCases: 'Ver Más Casos Clínicos',
+      defaultDisclaimer: 'Resultado real de paciente. Los resultados pueden variar según cada caso individual.',
+      ceramicCase: {
+        title: 'Diseño de Sonrisa en Cerámica',
+        category: 'Diseño de Sonrisa',
+        description: 'Tratamiento realizado con restauraciones cerámicas de alta estética que permiten mejorar forma, color y proporción dental, logrando una sonrisa más armónica, natural y luminosa, con resultados duraderos y biocompatibles.'
+      },
       case1: {
         title: 'Diseño de Sonrisa Completo',
         category: 'Estética Dental',
@@ -446,6 +452,12 @@ const translations = {
       nextSuccess: 'Want to be our next success story?',
       nextSuccessDesc: 'Each patient is unique and deserves personalized treatment. Schedule your consultation and discover how we can transform your smile.',
       viewMoreCases: 'View More Clinical Cases',
+      defaultDisclaimer: 'Real patient result. Results may vary depending on each individual case.',
+      ceramicCase: {
+        title: 'Ceramic Smile Design',
+        category: 'Smile Design',
+        description: 'Treatment performed with high-aesthetic ceramic restorations that improve shape, color and dental proportion, achieving a more harmonious, natural and luminous smile, with lasting and biocompatible results.'
+      },
       case1: {
         title: 'Complete Smile Design',
         category: 'Dental Aesthetics',
