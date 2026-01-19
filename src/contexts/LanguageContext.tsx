@@ -147,6 +147,10 @@ const translations = {
         category: 'Diseño de Sonrisa',
         description: 'Tratamiento realizado con restauraciones cerámicas de alta estética que permiten mejorar forma, color y proporción dental, logrando una sonrisa más armónica, natural y luminosa, con resultados duraderos y biocompatibles.'
       },
+      ceramicLenses: {
+        title: 'Diseño de sonrisa con lentes cerámicos',
+        description: 'Transformación estética realizada con lentes cerámicos de alta precisión, diseñados para mejorar la forma, el color y la proporción dental, logrando una sonrisa armónica, natural y luminosa. Este tratamiento permite realzar la expresión facial, ofreciendo resultados duraderos, biocompatibles y altamente estéticos, adaptados a las características únicas de cada paciente.'
+      },
       case1: {
         title: 'Diseño de Sonrisa Completo',
         category: 'Estética Dental',
@@ -457,6 +461,10 @@ const translations = {
         title: 'Ceramic Smile Design',
         category: 'Smile Design',
         description: 'Treatment performed with high-aesthetic ceramic restorations that improve shape, color and dental proportion, achieving a more harmonious, natural and luminous smile, with lasting and biocompatible results.'
+      },
+      ceramicLenses: {
+        title: 'Smile design with ceramic lenses',
+        description: 'Aesthetic transformation performed with high-precision ceramic lenses, designed to improve the shape, color and dental proportion, achieving a harmonious, natural and luminous smile. This treatment enhances facial expression, offering lasting, biocompatible and highly aesthetic results, adapted to the unique characteristics of each patient.'
       },
       case1: {
         title: 'Complete Smile Design',
