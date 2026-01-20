@@ -1,45 +1,63 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Eye } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface BeforeAfterModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  beforeImage?: string;
+  afterImage?: string;
+  singleImage?: string;
   title: string;
-  imageSrc: string;
-  triggerText?: string;
 }
 
-const BeforeAfterModal = ({ title, imageSrc, triggerText }: BeforeAfterModalProps) => {
+const BeforeAfterModal = ({ 
+  isOpen, 
+  onClose, 
+  beforeImage, 
+  afterImage, 
+  singleImage,
+  title 
+}: BeforeAfterModalProps) => {
   const { t } = useLanguage();
-  const label = triggerText ?? t('cases.viewResults');
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <Eye size={16} />
-          {label}
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="max-w-4xl">
-        <DialogHeader>
-          <DialogTitle className="text-center text-xl">
-            {t('cases.before')} y {t('cases.after')} - {title}
-          </DialogTitle>
-        </DialogHeader>
-        <div className="flex flex-col items-center space-y-4">
-          <img 
-            src={imageSrc} 
-            alt={`${t('cases.before')} y ${t('cases.after')} de ${title}`}
-            className="w-full max-w-3xl rounded-lg shadow-lg"
-          />
-          <div className="flex justify-between w-full max-w-3xl text-sm text-muted-foreground">
-            <span className="font-semibold uppercase">{t('cases.before')}</span>
-            <span className="font-semibold uppercase">{t('cases.after')}</span>
-          </div>
-          <p className="text-center text-muted-foreground max-w-2xl">
-            Resultados reales de pacientes que han confiado en nuestros tratamientos especializados.
-            Los resultados pueden variar según cada caso individual.
-          </p>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-4xl w-[95vw] p-2 sm:p-6">
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-center text-foreground">{title}</h3>
+          
+          {singleImage ? (
+            <div className="w-full">
+              <img 
+                src={singleImage} 
+                alt={title}
+                className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+              />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <p className="text-sm font-medium text-center text-muted-foreground uppercase">
+                  {t('cases.before')}
+                </p>
+                <img 
+                  src={beforeImage} 
+                  alt={`${t('cases.before')} - ${title}`}
+                  className="w-full h-auto max-h-[60vh] object-contain rounded-lg"
+                />
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm font-medium text-center text-muted-foreground uppercase">
+                  {t('cases.after')}
+                </p>
+                <img 
+                  src={afterImage} 
+                  alt={`${t('cases.after')} - ${title}`}
+                  className="w-full h-auto max-h-[60vh] object-contain rounded-lg"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </DialogContent>
     </Dialog>
