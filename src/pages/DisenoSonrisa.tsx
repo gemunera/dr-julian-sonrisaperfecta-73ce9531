@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Footer from "@/components/Footer";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import SingleImageCard from "@/components/SingleImageCard";
+import ImageCarouselCard from "@/components/ImageCarouselCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,7 +11,9 @@ import { openWhatsApp } from "@/lib/social-links";
 import { useLanguage } from "@/contexts/LanguageContext";
 import smileDesignBefore from "@/assets/smile-design-before.png";
 import smileDesignAfter from "@/assets/smile-design-after.png";
-import smileDesignComplete from "@/assets/smile-design-complete.png";
+import ceramicLenses1 from "@/assets/ceramic-lenses-1.jpg";
+import ceramicLenses2 from "@/assets/ceramic-lenses-2.jpg";
+import ceramicLensesSmile from "@/assets/ceramic-lenses-smile.jpg";
 
 const DisenoSonrisa = () => {
   const { t, language } = useLanguage();
@@ -95,8 +97,8 @@ const DisenoSonrisa = () => {
                 category={t('cases.ceramicCase.category')} 
                 description={t('cases.ceramicCase.description')} 
               />
-              <SingleImageCard 
-                image={smileDesignComplete}
+              <ImageCarouselCard 
+                images={[ceramicLensesSmile, ceramicLenses1, ceramicLenses2]}
                 title={t('cases.ceramicLenses.title')}
                 description={t('cases.ceramicLenses.description')}
               />
