@@ -9,32 +9,12 @@ import { Badge } from "@/components/ui/badge";
 import { Smile, Star, Sparkles, Clock, CheckCircle, Heart, Award } from "lucide-react";
 import { openWhatsApp } from "@/lib/social-links";
 import { useLanguage } from "@/contexts/LanguageContext";
-import ceramicSmileBefore from "@/assets/ceramic-smile-before.png";
-import ceramicSmileAfter from "@/assets/ceramic-smile-after.png";
-import ceramicLensesSmile from "@/assets/ceramic-lenses-smile.jpg";
-import beforeAfterImplants from "@/assets/before-after-implants.jpg";
+import smileDesignBefore from "@/assets/smile-design-before.png";
+import smileDesignAfter from "@/assets/smile-design-after.png";
+import smileDesignComplete from "@/assets/smile-design-complete.png";
 
 const DisenoSonrisa = () => {
   const { t, language } = useLanguage();
-
-  const beforeAfterCases = [{
-    beforeImage: ceramicSmileBefore,
-    afterImage: ceramicSmileAfter,
-    title: t('cases.ceramicCase.title'),
-    category: t('cases.ceramicCase.category'),
-    description: t('cases.ceramicCase.description')
-  }, {
-    beforeImage: beforeAfterImplants,
-    afterImage: beforeAfterImplants,
-    title: t('smileDesignPage.cases.case3.title'),
-    category: t('smileDesignPage.cases.case3.category')
-  }];
-
-  const singleImageCase = {
-    image: ceramicLensesSmile,
-    title: t('cases.ceramicLenses.title'),
-    description: t('cases.ceramicLenses.description')
-  };
 
   const whatsappMessage = language === 'es' 
     ? 'Hola, me interesa una consulta sobre Diseño de Sonrisa'
@@ -107,21 +87,18 @@ const DisenoSonrisa = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {beforeAfterCases.map((caseItem, index) => (
-                <BeforeAfterSlider 
-                  key={index} 
-                  beforeImage={caseItem.beforeImage} 
-                  afterImage={caseItem.afterImage} 
-                  title={caseItem.title} 
-                  category={caseItem.category} 
-                  description={caseItem.description} 
-                />
-              ))}
+            <div className="grid md:grid-cols-2 gap-8">
+              <BeforeAfterSlider 
+                beforeImage={smileDesignBefore} 
+                afterImage={smileDesignAfter} 
+                title={t('cases.ceramicCase.title')} 
+                category={t('cases.ceramicCase.category')} 
+                description={t('cases.ceramicCase.description')} 
+              />
               <SingleImageCard 
-                image={singleImageCase.image}
-                title={singleImageCase.title}
-                description={singleImageCase.description}
+                image={smileDesignComplete}
+                title={t('cases.ceramicLenses.title')}
+                description={t('cases.ceramicLenses.description')}
               />
             </div>
             

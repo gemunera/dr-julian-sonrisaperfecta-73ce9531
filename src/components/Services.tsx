@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +10,8 @@ import {
   Shield, 
   Clock,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Eye
 } from "lucide-react";
 import { openWhatsApp } from "@/lib/social-links";
 
@@ -20,6 +22,8 @@ import beforeAfterPeriodontics from "@/assets/before-after-periodontics.jpg";
 import beforeAfterImplants from "@/assets/before-after-implants.jpg";
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
   const services = [
     {
       id: "diseno-sonrisa",
@@ -86,6 +90,8 @@ const Services = () => {
       beforeAfterImage: beforeAfterImplants
     }
   ];
+
+  const currentService = services.find(s => s.id === selectedService);
 
   return (
     <section className="py-20 bg-gradient-light">
@@ -163,10 +169,15 @@ const Services = () => {
                         Consultar sobre {service.title}
                         <ArrowRight size={16} />
                       </Button>
-                      <BeforeAfterModal 
-                        title={service.title}
-                        imageSrc={service.beforeAfterImage}
-                      />
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="gap-2"
+                        onClick={() => setSelectedService(service.id)}
+                      >
+                        <Eye size={16} />
+                        Ver Resultados
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -196,6 +207,15 @@ const Services = () => {
           </div>
         </div>
       </div>
+
+      {currentService && (
+        <BeforeAfterModal
+          isOpen={!!selectedService}
+          onClose={() => setSelectedService(null)}
+          singleImage={currentService.beforeAfterImage}
+          title={currentService.title}
+        />
+      )}
     </section>
   );
 };
