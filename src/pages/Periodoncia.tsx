@@ -4,11 +4,15 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import ImageCarouselCard from "@/components/ImageCarouselCard";
+import SingleImageCard from "@/components/SingleImageCard";
 import { Shield, Heart, Microscope, Users, CheckCircle, AlertTriangle, Stethoscope } from "lucide-react";
 import { openWhatsApp } from "@/lib/social-links";
 import { useLanguage } from "@/contexts/LanguageContext";
-import beforeAfterPeriodontics from "@/assets/before-after-periodontics.jpg";
+import implantProsthesis1 from "@/assets/implant-prosthesis-1.jpg";
+import implantProsthesis2 from "@/assets/implant-prosthesis-2.jpg";
+import implantProsthesis3 from "@/assets/implant-prosthesis-3.jpg";
+import gingivalDesign from "@/assets/gingival-design.png";
 
 const Periodoncia = () => {
   const { t, language } = useLanguage();
@@ -30,14 +34,6 @@ const Periodoncia = () => {
     benefits: (t('periodonticsPage.treatment3.benefits') as unknown as string[])
   }];
 
-  const clinicalCases = [
-    {
-      title: t('periodonticsPage.clinicalCase.title'),
-      category: t('periodonticsPage.clinicalCase.category'),
-      beforeImage: beforeAfterPeriodontics,
-      afterImage: beforeAfterPeriodontics
-    }
-  ];
 
   const symptoms = t('periodonticsPage.symptoms') as unknown as string[];
   const prevention = t('periodonticsPage.prevention') as unknown as string[];
@@ -134,16 +130,24 @@ const Periodoncia = () => {
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
-              {clinicalCases.map((clinicalCase, index) => (
-                <BeforeAfterSlider
-                  key={index}
-                  beforeImage={clinicalCase.beforeImage}
-                  afterImage={clinicalCase.afterImage}
-                  title={clinicalCase.title}
-                  category={clinicalCase.category}
+            <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* Prótesis fijas sobre implantes */}
+              <div className="space-y-4">
+                <ImageCarouselCard 
+                  images={[implantProsthesis1, implantProsthesis2, implantProsthesis3]}
+                  title="Prótesis fijas sobre implantes"
+                  description="Tratamiento indicado para pacientes que han perdido uno o varios dientes, mediante prótesis fijas soportadas sobre implantes dentales. Esta solución permite recuperar la función masticatoria, la estética y la estabilidad de la sonrisa, ofreciendo resultados seguros, duraderos y altamente biocompatibles."
                 />
-              ))}
+              </div>
+              
+              {/* Diseño gingival estético */}
+              <div className="space-y-4">
+                <SingleImageCard 
+                  image={gingivalDesign}
+                  title="Diseño gingival estético"
+                  description="Procedimiento estético y funcional que permite armonizar el contorno de las encías, mejorando la proporción entre dientes y tejido gingival. Este tratamiento ayuda a lograr una sonrisa más equilibrada, saludable y natural, respetando la biología de los tejidos."
+                />
+              </div>
             </div>
             
             <div className="text-center mt-12">
