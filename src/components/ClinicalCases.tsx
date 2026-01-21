@@ -1,15 +1,17 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Star, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import VideoTestimonials from "@/components/VideoTestimonials";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { openWhatsApp } from "@/lib/social-links";
 
 const ClinicalCases = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
-  return <section id="casos" className="py-20 bg-background">
+  return (
+    <section id="casos" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4">{t('cases.badge')}</Badge>
@@ -21,28 +23,39 @@ const ClinicalCases = () => {
           </p>
         </div>
 
-        {/* Featured Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+        {/* Featured Stats with Animated Counters */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           <div className="text-center p-6 bg-card rounded-lg shadow-card">
-            <div className="text-3xl font-bold text-primary mb-2">500+</div>
+            <div className="text-3xl font-bold text-primary mb-2">
+              <AnimatedCounter end={500} suffix="+" duration={2500} />
+            </div>
             <div className="text-sm text-muted-foreground">{t('cases.successCases')}</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg shadow-card">
-            <div className="text-3xl font-bold text-primary mb-2">4.9/5</div>
+            <div className="text-3xl font-bold text-primary mb-2">
+              <AnimatedCounter end={4.9} suffix="/5" duration={2000} decimals={1} />
+            </div>
             <div className="text-sm text-muted-foreground">{t('cases.averageSatisfaction')}</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg shadow-card">
-            <div className="text-3xl font-bold text-primary mb-2">98%</div>
+            <div className="text-3xl font-bold text-primary mb-2">
+              <AnimatedCounter end={98} suffix="%" duration={2200} />
+            </div>
             <div className="text-sm text-muted-foreground">{t('cases.successRate')}</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg shadow-card">
-            <div className="text-3xl font-bold text-primary mb-2">10+</div>
+            <div className="text-3xl font-bold text-primary mb-2">
+              <AnimatedCounter end={10} suffix="+" duration={1800} />
+            </div>
             <div className="text-sm text-muted-foreground">{t('cases.yearsExperience')}</div>
           </div>
         </div>
 
+        {/* Video Testimonials */}
+        <VideoTestimonials />
+
         {/* Call to Action */}
-        <div className="text-center">
+        <div className="text-center mt-16">
           <div className="bg-gradient-primary text-primary-foreground p-8 rounded-2xl shadow-professional max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">
               {t('cases.nextSuccess')}
@@ -65,7 +78,8 @@ const ClinicalCases = () => {
         {/* Testimonials Carousel */}
         <TestimonialsCarousel />
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default ClinicalCases;
