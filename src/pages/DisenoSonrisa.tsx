@@ -13,6 +13,7 @@ import smileDesignBefore from "@/assets/smile-design-before.png";
 import smileDesignAfter from "@/assets/smile-design-after.png";
 import ceramicLenses1 from "@/assets/ceramic-lenses-1.jpg";
 import ceramicLenses2 from "@/assets/ceramic-lenses-2.jpg";
+import ceramicLenses3 from "@/assets/ceramic-lenses-3.png";
 import ceramicLensesSmile from "@/assets/ceramic-lenses-smile.jpg";
 
 const DisenoSonrisa = () => {
@@ -98,7 +99,7 @@ const DisenoSonrisa = () => {
                 description={t('cases.ceramicCase.description')} 
               />
               <ImageCarouselCard 
-                images={[ceramicLensesSmile, ceramicLenses1, ceramicLenses2]}
+                images={[ceramicLensesSmile, ceramicLenses1, ceramicLenses2, ceramicLenses3]}
                 title={t('cases.ceramicLenses.title')}
                 description={t('cases.ceramicLenses.description')}
               />
