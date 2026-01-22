@@ -135,8 +135,8 @@ const Periodoncia = () => {
               <div className="space-y-4">
                 <ImageCarouselCard 
                   images={[implantProsthesis1, implantProsthesis2, implantProsthesis3]}
-                  title="Prótesis fijas sobre implantes"
-                  description="Tratamiento indicado para pacientes que han perdido uno o varios dientes, mediante prótesis fijas soportadas sobre implantes dentales. Esta solución permite recuperar la función masticatoria, la estética y la estabilidad de la sonrisa, ofreciendo resultados seguros, duraderos y altamente biocompatibles."
+                  title={t('periodonticsPage.implantProsthesis.title')}
+                  description={t('periodonticsPage.implantProsthesis.description')}
                 />
               </div>
               
@@ -144,8 +144,8 @@ const Periodoncia = () => {
               <div className="space-y-4">
                 <SingleImageCard 
                   image={gingivalDesign}
-                  title="Diseño gingival estético"
-                  description="Procedimiento estético y funcional que permite armonizar el contorno de las encías, mejorando la proporción entre dientes y tejido gingival. Este tratamiento ayuda a lograr una sonrisa más equilibrada, saludable y natural, respetando la biología de los tejidos."
+                  title={t('periodonticsPage.gingivalDesign.title')}
+                  description={t('periodonticsPage.gingivalDesign.description')}
                 />
               </div>
             </div>
