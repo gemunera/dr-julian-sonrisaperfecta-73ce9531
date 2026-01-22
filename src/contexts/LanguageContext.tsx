@@ -291,6 +291,14 @@ const translations = {
         title: 'Regeneración Periodontal',
         category: 'Tratamiento Avanzado'
       },
+      implantProsthesis: {
+        title: 'Prótesis fijas sobre implantes',
+        description: 'Tratamiento indicado para pacientes que han perdido uno o varios dientes, mediante prótesis fijas soportadas sobre implantes dentales. Esta solución permite recuperar la función masticatoria, la estética y la estabilidad de la sonrisa, ofreciendo resultados seguros, duraderos y altamente biocompatibles.'
+      },
+      gingivalDesign: {
+        title: 'Diseño gingival estético',
+        description: 'Procedimiento estético y funcional que permite armonizar el contorno de las encías, mejorando la proporción entre dientes y tejido gingival. Este tratamiento ayuda a lograr una sonrisa más equilibrada, saludable y natural, respetando la biología de los tejidos.'
+      },
       symptoms: ['Encías rojas o inflamadas', 'Sangrado al cepillarse', 'Mal aliento persistente', 'Retracción de encías', 'Dientes flojos o móviles', 'Dolor al masticar'],
       prevention: ['Cepillado correcto 2 veces al día', 'Uso diario de hilo dental', 'Enjuague bucal antibacteriano', 'Visitas regulares al periodoncista', 'Evitar el tabaco', 'Dieta balanceada']
     },
@@ -611,6 +619,14 @@ const translations = {
       clinicalCase: {
         title: 'Periodontal Regeneration',
         category: 'Advanced Treatment'
+      },
+      implantProsthesis: {
+        title: 'Fixed Implant-Supported Prosthesis',
+        description: 'Treatment indicated for patients who have lost one or more teeth, using fixed prostheses supported on dental implants. This solution allows you to recover masticatory function, aesthetics and smile stability, offering safe, durable and highly biocompatible results.'
+      },
+      gingivalDesign: {
+        title: 'Aesthetic Gingival Design',
+        description: 'Aesthetic and functional procedure that harmonizes the contour of the gums, improving the proportion between teeth and gingival tissue. This treatment helps achieve a more balanced, healthy and natural smile, respecting tissue biology.'
       },
       symptoms: ['Red or inflamed gums', 'Bleeding when brushing', 'Persistent bad breath', 'Gum recession', 'Loose or mobile teeth', 'Pain when chewing'],
       prevention: ['Correct brushing 2 times a day', 'Daily flossing', 'Antibacterial mouthwash', 'Regular visits to the periodontist', 'Avoid tobacco', 'Balanced diet']
