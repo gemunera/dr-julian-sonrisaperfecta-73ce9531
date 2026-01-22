@@ -188,6 +188,12 @@ const translations = {
         advanced: 'Avanzado',
         complex: 'Complejo',
         moderate: 'Moderado'
+      },
+      videoTestimonials: {
+        title: 'Testimonios Reales',
+        video1: 'Testimonio de Paciente',
+        video2: 'Experiencia del Paciente',
+        video3: 'Historia de Éxito'
       }
     },
     testimonials: {
@@ -503,6 +509,12 @@ const translations = {
         advanced: 'Advanced',
         complex: 'Complex',
         moderate: 'Moderate'
+      },
+      videoTestimonials: {
+        title: 'Real Testimonials',
+        video1: 'Patient Testimonial',
+        video2: 'Patient Experience',
+        video3: 'Success Story'
       }
     },
     testimonials: {

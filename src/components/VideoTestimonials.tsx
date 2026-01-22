@@ -2,8 +2,10 @@ import { useState, useRef } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import testimonialVideo1 from "@/assets/testimonial-video-1.mp4";
 import testimonialVideo2 from "@/assets/testimonial-video-2.mp4";
+import testimonialVideo3 from "@/assets/testimonial-video-3.mp4";
 
 interface VideoCardProps {
   src: string;
@@ -39,11 +41,12 @@ const VideoCard = ({ src, title }: VideoCardProps) => {
 
   return (
     <Card className="overflow-hidden bg-card shadow-card group">
-      <div className="relative aspect-[9/16] sm:aspect-video">
+      {/* Changed aspect ratio to show full person without cropping */}
+      <div className="relative aspect-[3/4] sm:aspect-[4/5]">
         <video
           ref={videoRef}
           src={src}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-black"
           muted={isMuted}
           playsInline
           preload="metadata"
@@ -97,23 +100,29 @@ const VideoCard = ({ src, title }: VideoCardProps) => {
 };
 
 const VideoTestimonials = () => {
+  const { t } = useLanguage();
+  
   const videos = [
     {
       src: testimonialVideo1,
-      title: "Testimonio de Paciente"
+      title: t('cases.videoTestimonials.video1')
     },
     {
       src: testimonialVideo2,
-      title: "Experiencia del Paciente"
+      title: t('cases.videoTestimonials.video2')
+    },
+    {
+      src: testimonialVideo3,
+      title: t('cases.videoTestimonials.video3')
     }
   ];
 
   return (
     <div className="mt-16">
       <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-        Testimonios en Video
+        {t('cases.videoTestimonials.title')}
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {videos.map((video, index) => (
           <VideoCard key={index} src={video.src} title={video.title} />
         ))}
